@@ -51,24 +51,26 @@
         #iperson1 {
             position: absolute;
             top: 160px;
-            margin: 0 470px;
+            margin: 0 275px;
         }
+
         #ipw {
             position: absolute;
             top: 210px;
-            margin: 0 470px;
+            margin: 0 275px;
         }
 
 
         #ipw2 {
             position: absolute;
             top: 260px;
-            margin: 0 470px;
+            margin: 0 275px;
         }
+
         #iperson2 {
             position: absolute;
             top: 310px;
-            margin: 0 470px;
+            margin: 0 275px;
         }
 
         input {
@@ -98,17 +100,20 @@
     <h5><span>회원 가입</span> 페이지입니다.</h5>
     <hr/>
     <br/>
-    <form action="join_db.jsp" method="post">
-        <input type="text"  placeholder="아이디"  name="id" required style="height:30px; width: 495px"/><br/><br/>
-        <input type="password"  placeholder="비밀번호" name="pw" required style="height:30px; width: 495px"/><br/><br/>
-        <input type="password"  placeholder="비밀번호 확인" name="pw_check" required style="height:30px; width: 495px"/><br/><br/>
-        <input type="text" placeholder="이름" name="name" required style="height:30px; width: 495px"/><br/><br/>
-        <input type="text" placeholder="전화번호" name="phone_num" required style="height:30px; width: 495px"/><br/><br/>
+    <form action="" method="post" name="userform">
+        <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 300px"/>
+        <input type="button" onclick="checkId(userid.value)" value="중복확인"> <br/><br/>
+        <input type="password" placeholder="비밀번호" name="pw" required style="height:30px; width: 300px"/><br/><br/>
+        <input type="password" placeholder="비밀번호 확인" name="pw_check" required
+               style="height:30px; width: 300px"/><br/><br/>
+        <input type="text" placeholder="이름" name="name" required style="height:30px; width: 300px"/><br/><br/>
+        <input type="text" placeholder="전화번호" name="phone_num" required style="height:30px; width: 300px"/><br/><br/>
         <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" required
                style="height:30px; width:150px"/>
         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br/>
         <input type="text" id="sample6_address" placeholder="주소" name="addr" required style="height:30px; width: 495px"><br>
-        <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" required style="height:30px; width: 495px"><br/>
+        <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" required
+               style="height:30px; width: 495px"><br/>
 
         <p>
             <input type="submit" value="가입하기" id="signup"/><br/><br/>
