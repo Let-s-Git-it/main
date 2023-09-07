@@ -1,7 +1,6 @@
 package com.pizzaorder.web.user.dao;
 
 public class UserDTO {
-<<<<<<< HEAD
 	private String userid;
 	private String userpw;
 	private String name;
