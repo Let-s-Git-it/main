@@ -31,12 +31,12 @@ protected void doProcess(HttpServletRequest request,
 	
 	if(requestURI.equals("/user/UserJoin.us")) {
 		System.out.println("프론트 도착");
-		forward = new UserjoinAction().excute(request, response);
+		forward = new UserjoinAction().execute(request, response);
 	}else if(requestURI.equals("/user/UserLogin.us")){
 		forward = new ActionForward(false,"/user/loginview.jsp");
 	}else if(requestURI.equals("/user/UserLoginOK.us")) {
 		System.out.println("front도착");
-		forward = new UserLoginOKAction().excute(request, response);
+		forward = new UserLoginOk().execute(request, response);
 	}
 	
 	
