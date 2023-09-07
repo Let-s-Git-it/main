@@ -20,7 +20,6 @@
 		</environment>
 	</environments>
 	<mappers>
-<!-- 		<mapper resource="com/codingbox/sql/test.xml" /> -->
 		<mapper resource="com/pizzaorder/sql/user.xml" />
 	</mappers>
 </configuration>
