@@ -1,11 +1,14 @@
 function sendit () {
-
-  let frm = document.getElementById('userform');
+  let frm = document.userform;
   let idTag = frm.userid;
   let pwTag = frm.userpw;
   let pwCheckTag = frm.userpw_re;
   let nameTag = frm.username;
   let phoneTag = frm.userphone;
+  let zipTag = frm.zipcode;
+  let addrTag = frm.addr;
+  let etcTag = frm.addretc;
+  let detailTag = frm.addrdetail;
 
   if (idTag.value == '') {
     alert('아이디를 입력해주세요!');
@@ -73,7 +76,7 @@ function logincheck () {
   frm.submit();
 }
 
-/// 아이디 중복체크
+// 아이디 중복체크
 function checkId (userid) {
   alert(userid);
   if (userid == '') {
@@ -86,7 +89,7 @@ function checkId (userid) {
     xhr.send();
     xhr.onreadystatechange = function () {
       // 응답의 영역(성공상태)
-      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
         if (xhr.responseText.trim() == 'ok') {
           /// ok
           document.getElementById('text').innerHTML = '사용할 수 있는 아이디 입니당.';

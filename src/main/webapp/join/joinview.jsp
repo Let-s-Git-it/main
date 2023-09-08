@@ -100,24 +100,36 @@
     <h5><span>회원 가입</span> 페이지입니다.</h5>
     <hr/>
     <br/>
-    <form action="" method="post" name="userform">
-        <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 300px"/>
-        <input type="button" onclick="checkId(userid.value)" value="중복확인"> <br/><br/>
-        <input type="password" placeholder="비밀번호" name="pw" required style="height:30px; width: 300px"/><br/><br/>
-        <input type="password" placeholder="비밀번호 확인" name="pw_check" required
-               style="height:30px; width: 300px"/><br/><br/>
-        <input type="text" placeholder="이름" name="name" required style="height:30px; width: 300px"/><br/><br/>
-        <input type="text" placeholder="전화번호" name="phone_num" required style="height:30px; width: 300px"/><br/><br/>
-        <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" required
-               style="height:30px; width:150px"/>
-        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br/>
-        <input type="text" id="sample6_address" placeholder="주소" name="addr" required style="height:30px; width: 495px"><br>
-        <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" required
-               style="height:30px; width: 495px"><br/>
 
-        <p>
-            <input type="submit" value="가입하기" id="signup"/><br/><br/>
-        </p>
+    <form action="/user/userJoin.us" method="post" name="userform">
+        <input type="text" placeholder="아이디" name="userid" autocomplete="userid" required
+               style="height:30px; width: 300px"/>
+        <input type="button" onclick="checkId(userform.userid.value);" value="중복확인"> <br/><br/>
+        <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 300px"/><br/><br/>
+        <input type="password" placeholder="비밀번호 확인" name="userpw_re" required
+               style="height:30px; width: 300px"/><br/><br/>
+        <input type="text" placeholder="이름" name="username" required style="height:30px; width: 300px"/><br/><br/>
+        <input type="text" placeholder="전화번호" name="userphone" required style="height:30px; width: 300px"/><br/><br/>
+        <P>
+            우편번호
+            <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode">
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+        </P>
+        <P>
+            주소
+            <input type="text" id="sample6_address" placeholder="주소" name="addr"><br>
+        </P>
+        <P>
+            참고항목
+            <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc">
+        </P>
+        <P>
+            상세주소
+            <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail">
+        </P>
+        <P>
+            <input type="button" value="가입완료" onclick="sendit();" id="signup"/><br/><br/>
+        </P>
     </form>
     <hr/>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

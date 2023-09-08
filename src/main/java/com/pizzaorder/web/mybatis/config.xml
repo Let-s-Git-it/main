@@ -21,5 +21,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/pizzaorder/sql/user.xml" />
+
 	</mappers>
 </configuration>
