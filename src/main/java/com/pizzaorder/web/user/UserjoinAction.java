@@ -16,28 +16,26 @@ public class UserjoinAction implements Action{
 		ActionForward forward = new ActionForward();
 		//DB연결, insert
 		UserDAO udao = new UserDAO();
-
 		//DTO
 		UserDTO udto = new UserDTO();
 		
 		udto.setUserid(request.getParameter("userid"));
 		udto.setUserpw(request.getParameter("userpw"));
-		udto.setName(request.getParameter("name"));
-		udto.setTell(request.getParameter("tell"));
+		udto.setUsername(request.getParameter("username"));
+		udto.setUserphone(request.getParameter("userphone"));
 		udto.setZipcode(request.getParameter("zipcode"));
 		udto.setAddr(request.getParameter("addr"));
-		udto.setExtraAddr(request.getParameter("extraAddr"));
-		
+		udto.setAddretc(request.getParameter("addretc"));
+		udto.setAddrdetail(request.getParameter("addrdetail"));
+
 		forward.setRedirect(true);
 		if(udao.join(udto)) {
 			//회원가입 성공
-			forward.setPath("/user/loginview.jsp");
+			forward.setPath("/login/loginview.jsp");
 		}else {
 			//회원가입 실패
 			forward.setPath("/index.jsp");
-			
 		}
 		return forward;
 	}
-
 }

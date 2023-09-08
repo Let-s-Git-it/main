@@ -15,8 +15,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.pizzaorder.web.mybatis.SqlMapConfig;
 
 public class UserDAO {
-
-
     SqlSessionFactory factory = SqlMapConfig.getFactory();
     SqlSession sqlSession;
 
@@ -27,11 +25,12 @@ public class UserDAO {
     //회원가입
     public boolean join(UserDTO user) {
         boolean result = false;
+        //1 param : 어떤 쿼리를 호출할지
+        //2 param : 쿼리 실행시 필요한 파라미터 값
         if (sqlSession.insert("User.join", user) != 0) {
             result = true;
         }
 
-        System.out.println(result);
         return result;
     }
 
@@ -51,20 +50,19 @@ public class UserDAO {
     }
 
 
-    // idcheck
     public boolean checkId(String userid) {
         boolean result = false;
-
-        // 이미 존재하는 사용자인지 확인
-        int count = sqlSession.selectOne("User.checkId", userid);
-
-        if (count == 1) {
-            result = true; // 이미 사용 중인 아이디
+        //query호출
+        int cnt = 0;
+        //1 param : 어떤 쿼리를 호출할지
+        //2 param : 쿼리 실행시 필요한 파라미터 값
+        cnt = sqlSession.selectOne("User.checkId", userid);
+        if (cnt >= 1) {
+            result = true;
         }
 
         return result;
     }
-
     //logout
 //	public boolean logout(String userid) {
 //		boolean result = false;

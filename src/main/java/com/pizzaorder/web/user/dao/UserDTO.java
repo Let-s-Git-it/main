@@ -3,52 +3,74 @@ package com.pizzaorder.web.user.dao;
 public class UserDTO {
 	private String userid;
 	private String userpw;
-	private String name;
-	private String tell;
+	private String username;
+	private String userphone;
 	private String zipcode;
 	private String addr;
-	private String extraAddr;
-	
+	private String addretc;
+	private String addrdetail;
+
 	public String getUserid() {
 		return userid;
 	}
+
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
+
 	public String getUserpw() {
 		return userpw;
 	}
+
 	public void setUserpw(String userpw) {
 		this.userpw = userpw;
 	}
-	public String getName() {
-		return name;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getTell() {
-		return tell;
+
+	public String getUserphone() {
+		return userphone;
 	}
-	public void setTell(String tell) {
-		this.tell = tell;
+
+	public void setUserphone(String userphone) {
+		this.userphone = userphone;
 	}
+
 	public String getZipcode() {
 		return zipcode;
 	}
+
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+
 	public String getAddr() {
 		return addr;
 	}
+
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getExtraAddr() {
-		return extraAddr;
+
+	public String getAddretc() {
+		return addretc;
 	}
-	public void setExtraAddr(String extraAddr) {
-		this.extraAddr = extraAddr;
+
+	public void setAddretc(String addretc) {
+		this.addretc = addretc;
+	}
+
+	public String getAddrdetail() {
+		return addrdetail;
+	}
+
+	public void setAddrdetail(String addrdetail) {
+		this.addrdetail = addrdetail;
 	}
 }

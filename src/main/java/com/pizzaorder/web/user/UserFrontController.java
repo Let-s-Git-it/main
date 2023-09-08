@@ -33,7 +33,7 @@ protected void doProcess(HttpServletRequest request,
 		System.out.println("프론트 도착");
 		forward = new UserjoinAction().execute(request, response);
 	}else if(requestURI.equals("/user/UserLogin.us")){
-		forward = new ActionForward(false,"/user/loginview.jsp");
+		forward = new ActionForward(false,"/login/loginview.jsp");
 	}else if(requestURI.equals("/user/UserLoginOK.us")) {
 		System.out.println("front도착");
 		forward = new UserLoginOk().execute(request, response);
@@ -53,16 +53,3 @@ protected void doProcess(HttpServletRequest request,
 	}
  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
