@@ -3,13 +3,14 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
-	<insert id="join" parameterType="udto">
+	<insert id="join" parameterType="userdto">
 		INSERT INTO CUSTOMER VALUES (#{userid},#{userpw},#{username},#{userphone},#{zipcode},#{addr},#{addretc},#{addrdetail})
 	</insert>
-	<select id="login" parameterType="hashmap" resultType="_int">
+	<select id="logincheck" parameterType="hashmap" resultType="_int">
 		SELECT count(*) FROM CUSTOMER WHERE userid= #{userid} AND userpw = #{userpw}
 	</select>
 	<select id="checkId" parameterType="string" resultType="_int">
 		select count(*) from customer where userid = #{userid}
 	</select>
+
 </mapper>

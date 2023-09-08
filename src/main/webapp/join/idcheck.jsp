@@ -6,7 +6,8 @@
     String userid = request.getParameter("userid");
 
     UserDAO udao = new UserDAO();
-
+    System.out.println("checkID : "+userid);
+    System.out.println(request.getServletPath());
     if (!udao.checkId(userid)) {
         out.print("ok");
 

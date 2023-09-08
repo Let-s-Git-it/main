@@ -49,14 +49,16 @@ function sendit () {
     return false;
 
   }
+
+  if (zipTag.value == '') {
+    alert('주소를 입력해주세요');
+  }
   frm.submit();
 }
 
-function logincheck () {
-  // 아이디 "", alert
-  // 비밀번호 "", alert
+function logincheck (userid, userpw) {
 
-  let frm = document.frm;
+  let frm = document.userlogin;
   let idTag2 = frm.userid;
   let pwTag2 = frm.userpw;
 
@@ -64,21 +66,43 @@ function logincheck () {
     alert('아이디를 입력해주세요!');
     idTag2.focus();
     return false;
-
+  } else {
+    let xhr = new XMLHttpRequest(); //요청
+    xhr.open('GET', 'idcheck.jsp?userid=' + userid, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      // 응답의 영역(성공상태)
+      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
+        if (xhr.responseText.trim() == 'not-ok') {
+          alert('아이디를 다시 입력해주세요');
+        }
+      }
+    };
   }
 
   if (pwTag2.value == '') {
     alert('비밀번호를 입력해주세요!');
     pwTag2.focus();
     return false;
-
+  } else {
+    let xhr = new XMLHttpRequest(); //요청
+    xhr.open('GET', 'pwcheck.jsp?userpw=' + userpw, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      // 응답의 영역(성공상태)
+      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
+        if (xhr.responseText.trim() == 'not-ok') {
+          alert('비밀번호를 확인해주세요');
+        }
+      }
+    };
   }
   frm.submit();
 }
 
 // 아이디 중복체크
 function checkId (userid) {
-  alert(userid);
+  //alert(userid);
   if (userid == '') {
     alert('아이디를 입력해주세요');
     return false;
@@ -91,11 +115,9 @@ function checkId (userid) {
       // 응답의 영역(성공상태)
       if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
         if (xhr.responseText.trim() == 'ok') {
-          /// ok
-          document.getElementById('text').innerHTML = '사용할 수 있는 아이디 입니당.';
+          alert('사용할 수 있는 아이디입니다.');
         } else {
-          document.getElementById('text').innerHTML = '사용할 수 없는 아이디 입니당.';
-          /// not ok
+          alert('이미 존재하는 아이디입니다.');
         }
       }
     };

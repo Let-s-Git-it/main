@@ -13,7 +13,16 @@ import com.pizzaorder.web.user.action.ActionForward;
 
 @WebServlet("*.us")
 public class UserFrontController extends HttpServlet {
-@Override
+
+	@Override
+protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println(req.getRequestURI());
+		System.out.println(req.getContextPath());
+		System.out.println(req.getServletPath());
+		System.out.println(req.getPathInfo());
+		super.service(req, resp);
+	}
+	@Override
 protected void doGet(HttpServletRequest req, 
 		HttpServletResponse resp) throws ServletException, IOException {
 	doProcess(req,resp);
@@ -29,17 +38,14 @@ protected void doProcess(HttpServletRequest request,
 	String responseURI = null;
 	ActionForward forward = null;
 	
-	if(requestURI.equals("/user/UserJoin.us")) {
-		System.out.println("프론트 도착");
+	if(requestURI.equals("/user/userJoin.us")) {
 		forward = new UserjoinAction().execute(request, response);
 	}else if(requestURI.equals("/user/UserLogin.us")){
 		forward = new ActionForward(false,"/login/loginview.jsp");
 	}else if(requestURI.equals("/user/UserLoginOK.us")) {
-		System.out.println("front도착");
 		forward = new UserLoginOk().execute(request, response);
 	}
-	
-	
+
 	//일괄처리
 	if(forward != null) {
 		if(forward.isRedirect()) {
