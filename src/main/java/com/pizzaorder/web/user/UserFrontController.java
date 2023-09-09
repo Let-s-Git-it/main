@@ -37,13 +37,21 @@ protected void doProcess(HttpServletRequest request,
 	String requestURI = request.getRequestURI();
 	String responseURI = null;
 	ActionForward forward = null;
-	
+
+	//System.out.println(">>>>>>>>>>>>> requestURI : " + requestURI);
+
 	if(requestURI.equals("/user/userJoin.us")) {
 		forward = new UserjoinAction().execute(request, response);
-	}else if(requestURI.equals("/user/UserLogin.us")){
-		forward = new ActionForward(false,"/login/loginview.jsp");
-	}else if(requestURI.equals("/user/UserLoginOK.us")) {
+//	}else if(requestURI.equals("/user/UserLogin.us")){
+//		forward = new ActionForward(false,"/login/loginview.jsp");
+	}
+	if("/user/UserLoginOk.us".equals(requestURI) ) {
+		//System.out.println(">>>>>>>>>>>>>>>>>>>>>>>> /user/UserLoginOK.us 호출 ...");
 		forward = new UserLoginOk().execute(request, response);
+		System.out.print("forward - FrontControlelr >>>>>>>>>>>>>>>>>>>> ");
+		System.out.println(forward);
+	} else {
+		System.out.println("path 못 찾음 .... " + requestURI);
 	}
 
 	//일괄처리
@@ -53,6 +61,7 @@ protected void doProcess(HttpServletRequest request,
 			response.sendRedirect(forward.getPath());
 		}else {
 			//forward방식으로 페이지 이동
+			System.out.println("forward.getPath()"   + forward.getPath());
 			RequestDispatcher disp = request.getRequestDispatcher(forward.getPath());
 			disp.forward(request, response);
 		}

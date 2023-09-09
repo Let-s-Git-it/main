@@ -1,30 +1,31 @@
 package com.pizzaorder.web.user;
-	import javax.servlet.http.HttpServletRequest;
-	import javax.servlet.http.HttpServletResponse;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.pizzaorder.web.user.action.Action;
 import com.pizzaorder.web.user.action.ActionForward;
 import com.pizzaorder.web.user.dao.UserDAO;
+
 public class UserLoginOk implements Action {
-	
+    @Override
+    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 
-	    @Override
-	    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-	        ActionForward forward = new ActionForward();
-	        UserDAO udao = new UserDAO();
-	        String userid = request.getParameter("customer_id");
-	        String userpw = request.getParameter("customer_pw");
-	        udao.login(userid,userpw);
+        ActionForward forward = new ActionForward();
+        UserDAO udao = new UserDAO();
+        String userid = request.getParameter("userid");
+        String userpw = request.getParameter("userpw");
+        System.out.println("userid: " + userid);
+        System.out.println("userpw: " + userpw);
 
-	        if (udao.login(userid, userpw)) {
-	            forward.setPath("/base/index.html");
-	        }
-	        else{
-	            forward.setPath("/login/loginview.jsp");
-	        };
+        if (udao.logincheck(userid, userpw)) {
+            forward.setPath("/base/index.html");
+        } else {
+            forward.setPath("/login/loginview.jsp");
+        }
 
-	        return forward;
-	    }
-	}
+        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
 
-
+        return forward;
+    }
+}

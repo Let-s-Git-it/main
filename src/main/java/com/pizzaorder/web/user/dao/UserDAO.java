@@ -34,14 +34,14 @@ public class UserDAO {
         return result;
     }
 
-    public boolean login(String userid, String userpw) {
+    public boolean logincheck(String userid, String userpw) {
         boolean result = false;
 
         HashMap<String, String> datas = new HashMap<>();
         datas.put("userid", userid);
         datas.put("userpw", userpw);
 
-        if ((Integer) sqlSession.selectOne("User.login", datas) == 1) {
+        if ((Integer) sqlSession.selectOne("User.logincheck", datas) == 1) {
             result = true;
         }
 
@@ -57,6 +57,20 @@ public class UserDAO {
         //1 param : 어떤 쿼리를 호출할지
         //2 param : 쿼리 실행시 필요한 파라미터 값
         cnt = sqlSession.selectOne("User.checkId", userid);
+        if (cnt >= 1) {
+            result = true;
+        }
+
+        return result;
+    }
+
+    public boolean checkPW(String userpw) {
+        boolean result = false;
+        //query호출
+        int cnt = 0;
+        //1 param : 어떤 쿼리를 호출할지
+        //2 param : 쿼리 실행시 필요한 파라미터 값
+        cnt = sqlSession.selectOne("User.checkPW", userpw);
         if (cnt >= 1) {
             result = true;
         }

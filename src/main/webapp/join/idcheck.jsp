@@ -12,7 +12,7 @@
         out.print("ok");
 
     } else {
-        // 회원가입 불가한 상태
+        // 로그인 불가한 상태
         out.print("not-ok");
 
     }
