@@ -1,3 +1,7 @@
+<%@ page import="com.pizzaorder.web.user.dao.UserDAO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+
 <!doctype html>
 <html lang="en">
 <!--review페이지로 사용-->
@@ -6,26 +10,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dingo</title>
-    <link rel="icon" href="../../../../img/favicon.png">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="../../../../css/animate.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="../../../../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css">
     <!-- themify CSS -->
-    <link rel="stylesheet" href="../../../../css/themify-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/themify-icons.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="../../../../css/flaticon.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/flaticon.css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" href="../../../../css/magnific-popup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/magnific-popup.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="../../../../css/slick.css">
-    <link rel="stylesheet" href="../../../../css/gijgo.min.css">
-    <link rel="stylesheet" href="../../../../css/nice-select.css">
-    <link rel="stylesheet" href="../../../../css/all.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/gijgo.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nice-select.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="../../../../css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 
 <body>
@@ -35,7 +39,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="../base/index.html"> <img src="../../../../img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="${pageContext.request.contextPath}/base/index.jsp"> <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -46,29 +50,29 @@
                             id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../base/index.html">Home</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../about.html">About</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="food_menu.html">Menu</a>
+                                    <a class="nav-link" href="food_menu.jsp">Menu</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../base/chefs.html">Chefs</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="../blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/blog.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Blog
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="../blog.html">Blog</a>
-                                        <a class="dropdown-item" href="review.html">Single blog</a>
-                                        <a class="dropdown-item" href="../elements.html">Elements</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/blog.jsp">Blog</a>
+                                        <a class="dropdown-item" href="review.jsp">Single blog</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/elements.jsp">Elements</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../mapping.html">Contact</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -104,7 +108,7 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="../../../../img/blog/single_blog_1.png" alt="">
+                     <img class="img-fluid" src="${pageContext.request.contextPath}/img/blog/single_blog_1.png" alt="">
                   </div>
                   <div class="blog_details">
                      <h2>Second divided from form fish beast made every of seas
@@ -166,7 +170,7 @@
                            class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="../../../../img/post/preview.png" alt="">
+                                 <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/preview.png" alt="">
                               </a>
                            </div>
                            <div class="arrow">
@@ -196,7 +200,7 @@
                            </div>
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="../../../../img/post/next.png" alt="">
+                                 <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/next.png" alt="">
                               </a>
                            </div>
                         </div>
@@ -273,7 +277,7 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="../../../../img/comment/comment_3.png" alt="">
+                              <img src="${pageContext.request.contextPath}/img/comment/comment_3.png" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
@@ -390,7 +394,7 @@
                      <div class="media post_item">
                         <img src="img/post/post_1.png" alt="post">
                         <div class="media-body">
-                           <a href="review.html">
+                           <a href="review.jsp">
                               <h3>From life was you fish...</h3>
                            </a>
                            <p>January 12, 2019</p>
@@ -399,25 +403,25 @@
                      <div class="media post_item">
                         <img src="img/post/post_2.png" alt="post">
                         <div class="media-body">
-                           <a href="review.html">
+                           <a href="review.jsp">
                               <h3>The Amazing Hubble</h3>
                            </a>
                            <p>02 Hours ago</p>
                         </div>
                      </div>
                      <div class="media post_item">
-                        <img src="../../../../img/post/post_3.png" alt="post">
+                        <img src="${pageContext.request.contextPath}/img/post/post_3.png" alt="post">
                         <div class="media-body">
-                           <a href="review.html">
+                           <a href="review.jsp">
                               <h3>Astronomy Or Astrology</h3>
                            </a>
                            <p>03 Hours ago</p>
                         </div>
                      </div>
                      <div class="media post_item">
-                        <img src="../../../../img/post/post_4.png" alt="post">
+                        <img src="${pageContext.request.contextPath}/img/post/post_4.png" alt="post">
                         <div class="media-body">
-                           <a href="review.html">
+                           <a href="review.jsp">
                               <h3>Asteroids telescope</h3>
                            </a>
                            <p>01 Hours ago</p>
@@ -458,32 +462,32 @@
                      <ul class="instagram_row flex-wrap">
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_5.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_5.png" alt="">
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_6.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_6.png" alt="">
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_7.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_7.png" alt="">
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_8.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_8.png" alt="">
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_9.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_9.png" alt="">
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                              <img class="img-fluid" src="../../../../img/post/post_10.png" alt="">
+                              <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_10.png" alt="">
                            </a>
                         </li>
                      </ul>
@@ -583,25 +587,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
    <!-- jquery plugins here-->
    <!-- jquery -->
-   <script src="../../../../js/jquery-1.12.1.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>
    <!-- popper js -->
-   <script src="../../../../js/popper.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/popper.min.js"></script>
    <!-- bootstrap js -->
-   <script src="../../../../js/bootstrap.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
    <!-- easing js -->
-   <script src="../../../../js/jquery.magnific-popup.js"></script>
+   <script src="${pageContext.request.contextPath}/js/jquery.magnific-popup.js"></script>
    <!-- swiper js -->
-   <script src="../../../../js/swiper.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/swiper.min.js"></script>
    <!-- swiper js -->
-   <script src="../../../../js/masonry.pkgd.js"></script>
+   <script src="${pageContext.request.contextPath}/js/masonry.pkgd.js"></script>
    <!-- particles js -->
-   <script src="../../../../js/owl.carousel.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
    <!-- swiper js -->
-   <script src="../../../../js/slick.min.js"></script>
-   <script src="../../../../js/gijgo.min.js"></script>
-   <script src="../../../../js/jquery.nice-select.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/slick.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/gijgo.min.js"></script>
+   <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
    <!-- custom js -->
-   <script src="../../../../js/custom.js"></script>
+   <script src="${pageContext.request.contextPath}/js/custom.js"></script>
 </body>
 
 </html>

@@ -71,7 +71,6 @@
 </head>
 
 <body>
-
 <c:if test="${sessionID != null }">
     <script>
       alert("이미 로그인 중입니다.");
@@ -79,7 +78,7 @@
     </script>
 </c:if>
 
-<div class="container" action="${pageContext.request.contextPath}/user/UserLoginOk.us">
+<div class="container" action="${pageContext.request.contextPath}/user/UserLoginAction.us">
     <div id="imail">
         <i class="material-icons">person_outline</i>
     </div>
@@ -88,14 +87,14 @@
     </div>
     <h5><span>로그인</span> 페이지입니다.</h5>
     <hr/>
-    <form action="login.do" method="post">
-        <input type="text" placeholder="아이디" name="id" required style="height:30px; width: 380px"/><br/>
-        <input type="password" placeholder="비밀번호" name="pw" required style="height:30px; width: 380px"/><br/>
+    <form action="${pageContext.request.contextPath}/user/UserLoginOk.us" method="post" name="userlogin">
+        <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 380px"/><br/>
+        <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 380px"/><br/>
         <input type="submit" value="로그인" class="login"/>
-        <button onclick="location.href='/base/index.html'" class="login">HOME</button>
+        <button onclick="location.href='/index.jsp'" class="login">HOME</button>
     </form>
+    <p> </p>
     <hr/>
-    <p><a href="join.do"><input type="button" value="회원가입" id="signup"/></a></p>
 </div>
 
 </body>

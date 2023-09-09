@@ -1,3 +1,7 @@
+<%@ page import="com.pizzaorder.web.user.dao.UserDAO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,26 +10,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dingo</title>
-    <link rel="icon" href="../../../../img/favicon.png">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="../../../../css/animate.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="../../../../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css">
     <!-- themify CSS -->
-    <link rel="stylesheet" href="../../../../css/themify-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/themify-icons.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="../../../../css/flaticon.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/flaticon.css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" href="../../../../css/magnific-popup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/magnific-popup.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="../../../../css/slick.css">
-    <link rel="stylesheet" href="../../../../css/gijgo.min.css">
-    <link rel="stylesheet" href="../../../../css/nice-select.css">
-    <link rel="stylesheet" href="../../../../css/all.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/gijgo.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nice-select.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="../../../../css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 
 <body>
@@ -35,7 +39,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="../base/index.html"> <img src="../../../../img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="${pageContext.request.contextPath}/base/index.jsp"> <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -46,38 +50,38 @@
                             id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../base/index.html">Home</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../about.html">About</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="food_menu.html">메뉴</a>
+                                    <a class="nav-link" href="food_menu.jsp">메뉴</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../base/chefs.html">Chefs</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="../blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/blog.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Blog
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="../blog.html">Blog</a>
-                                        <a class="dropdown-item" href="review.html">Single blog</a>
-                                        <a class="dropdown-item" href="../elements.html">Elements</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/blog.jsp">Blog</a>
+                                        <a class="dropdown-item" href="review.jsp">Single blog</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/elements.jsp">Elements</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../mapping.html">Contact</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="menu_btn">
-                            <a href="../join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
+                            <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
                         </div>   <div class="menu_btn">
-                            <a href="../login/loginview.jsp" class="btn_1 d-none d-sm-block">로그인</a>
+                            <a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">로그인</a>
                         </div>   <div class="menu_btn">
-                            <a href="../menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
+                            <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
                         </div>
                     </nav>
                 </div>
@@ -116,12 +120,12 @@
                 <div class="col-lg-6">
                     <div class="nav nav-tabs food_menu_nav" id="myTab" role="tablist">
                         <a class="active" id="Main-tab" data-toggle="tab" href="#Main" role="tab"
-                            aria-controls="Main" aria-selected="false">메인 메뉴<img src="../../../../img/icon/play.svg" alt="play"></a>
+                            aria-controls="Main" aria-selected="false">메인 메뉴<img src="${pageContext.request.contextPath}/img/icon/play.svg" alt="play"></a>
                         <a id="Side-tab" data-toggle="tab" href="#Side" role="tab" aria-controls="Side"
-                            aria-selected="false">사이드 메뉴<img src="../../../../img/icon/play.svg" alt="play"></a>
+                            aria-selected="false">사이드 메뉴<img src="${pageContext.request.contextPath}/img/icon/play.svg" alt="play"></a>
                         <a id="Drink-tab" data-toggle="tab" href="#Drink" role="tab" aria-controls="Drink"
-                            aria-selected="false">음료<img src="../../../../img/icon/play.svg" alt="play"></a>
-                        <a href="../menu/review.html">리뷰</a>
+                            aria-selected="false">음료<img src="${pageContext.request.contextPath}/img/icon/play.svg" alt="play"></a>
+                        <a href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -131,7 +135,7 @@
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/bulgogi.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>불고기</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -149,7 +153,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/quatro.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/quatro.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>콰트로</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -167,7 +171,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/seafood.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/seafood.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>씨푸드</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -187,7 +191,7 @@
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/pepperoni.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>페퍼로니</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -205,7 +209,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/potato.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/potato.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>포테이토</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -223,7 +227,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/steak.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/steak.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>스테이크</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -248,7 +252,7 @@
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/cheese_ball.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>치즈볼</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -266,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/hot_wing.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>핫 윙</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -284,7 +288,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/carbonara.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/carbonara.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>까르보나라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -304,7 +308,7 @@
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/bolognese.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/bolognese.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>볼로네제 파스타</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -322,7 +326,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/coleslaw.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>코울슬로</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -347,7 +351,7 @@
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/coke.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/coke.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -365,7 +369,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/zerocoke.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>제로 콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -383,7 +387,7 @@
                                         </div>
                                     </div>
                                     <div class="single_food_item media">
-                                        <img src="../../../../img/food_menu/sprite.png" class="mr-3" alt="...">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/sprite.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>스프라이트</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
@@ -510,30 +514,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- jquery plugins here-->
     <!-- jquery -->
-    <script src="../../../../js/jquery-1.12.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
-    <script src="../../../../js/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/popper.min.js"></script>
     <!-- bootstrap js -->
-    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <!-- easing js -->
-    <script src="../../../../js/jquery.magnific-popup.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.magnific-popup.js"></script>
     <!-- swiper js -->
-    <script src="../../../../js/swiper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/swiper.min.js"></script>
     <!-- swiper js -->
-    <script src="../../../../js/masonry.pkgd.js"></script>
+    <script src="${pageContext.request.contextPath}/js/masonry.pkgd.js"></script>
     <!-- particles js -->
-    <script src="../../../../js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
     <!-- swiper js -->
-    <script src="../../../../js/slick.min.js"></script>
-    <script src="../../../../js/gijgo.min.js"></script>
-    <script src="../../../../js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/slick.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/gijgo.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
-    <script src="../../../../js/custom.js"></script>
+    <script src="${pageContext.request.contextPath}/js/custom.js"></script>
 </body>
 <script>
     function redirectToPage() {
     // 주문 창으로 이동
-    window.location.href = '../menu/order.jsp';
+    window.location.href = '${pageContext.request.contextPath}/menu/order.jsp';
 }
 </script>
 </html>
