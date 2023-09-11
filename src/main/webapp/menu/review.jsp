@@ -209,7 +209,7 @@
                </div>
                <div class="blog-author">
                   <div class="media align-items-center">
-                     <img src="img/blog/author.png" alt="">
+                     <img src="${pageContext.request.contextPath}/img/blog/author.png" alt="">
                      <div class="media-body">
                         <a href="#">
                            <h4>Harvard milan</h4>
@@ -225,7 +225,7 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="img/comment/comment_1.png" alt="">
+                              <img src="${pageContext.request.contextPath}/img/comment/comment_1.png" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
@@ -251,7 +251,7 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="img/comment/comment_2.png" alt="">
+                              <img src="${pageContext.request.contextPath}/img/comment/comment_2.png" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
@@ -392,7 +392,7 @@
                   <aside class="single_sidebar_widget popular_post_widget">
                      <h3 class="widget_title">Recent Post</h3>
                      <div class="media post_item">
-                        <img src="img/post/post_1.png" alt="post">
+                        <img src="${pageContext.request.contextPath}/img/post/post_1.png" alt="post">
                         <div class="media-body">
                            <a href="review.jsp">
                               <h3>From life was you fish...</h3>
@@ -401,7 +401,7 @@
                         </div>
                      </div>
                      <div class="media post_item">
-                        <img src="img/post/post_2.png" alt="post">
+                        <img src="${pageContext.request.contextPath}/img/post/post_2.png" alt="post">
                         <div class="media-body">
                            <a href="review.jsp">
                               <h3>The Amazing Hubble</h3>
