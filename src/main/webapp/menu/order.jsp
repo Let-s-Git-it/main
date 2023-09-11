@@ -115,119 +115,154 @@
                         <h2>Delicious Food Menu</h2>
                     </div>
                 </div>
-              
                 <div class="col-lg-12">
                     <div class="tab-content" id="myTabContent">
+	<h3>
+		<label style="display: block; text-align: center;" >
+			<strong>메인 메뉴</strong>
+		</label>
+	</h3>
+	<br/>
                         <div class="tab-pane fade show active single-member" id="Main" role="tabpanel"
                             aria-labelledby="Main-tab">
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu1">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
-                                            <h3>불고기</h3>
+                                            <h3 id="main_menu1_name">불고기</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦22,500</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu1" id="size_x" onchange="updatePrice('main_menu1', 'l')"> L (￦22,500)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu1" id="size_l" onchange="updatePrice('main_menu1', 'xl')"> XL (￦25,500)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu1_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('불고기 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('main_menu1')">-</button>
+                                                <span id="quantity_main1">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('main_menu1')">+</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu2">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/quatro.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
-                                            <h3>콰트로</h3>
+                                            <h3 id="main_menu2_name">콰트로</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦29,500</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu2" id="size_x" onchange="updatePrice('main_menu2', 'l')"> L (￦29,500)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu2" id="size_l" onchange="updatePrice('main_menu2', 'xl')"> XL (￦32,500)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu2_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('콰트로 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                 <button class="quantity-button" onclick="decreaseQuantity('main_menu2')">-</button>
+								                <span id="quantity_main2_x">0</span>
+								                <button class="quantity-button" onclick="increaseQuantity('main_menu2')">+</button>
                                                 </div> 
                                             </div>                 
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu3">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/seafood.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>씨푸드</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦30,000</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu3" id="size_x" onchange="updatePrice('main_menu3', 'l')"> L (￦30,000)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu3" id="size_l" onchange="updatePrice('main_menu3', 'xl')"> XL (￦33,000)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu3_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('씨푸드 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('main_menu3')">-</button>
+                                                <span id="quantity_main3">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('main_menu3')">+</button>
                                             </div>    
                                         </div>                 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu4">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>페퍼로니</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦18,500</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu4" id="size_x" onchange="updatePrice('main_menu4', 'l')"> L (￦18,500)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu4" id="size_l" onchange="updatePrice('main_menu4', 'xl')"> XL (￦21,500)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu4_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('페퍼로니 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>   
+                                                <button class="quantity-button" onclick="decreaseQuantity('main_menu4')">-</button>
+                                                <span id="quantity_main4">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('main_menu4')">+</button>
                                             </div>    
                                         </div>                 
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu5">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/potato.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>포테이토</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦20,500</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu5" id="size_x" onchange="updatePrice('main_menu5', 'l')"> L (￦20,500)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu5" id="size_l" onchange="updatePrice('main_menu5', 'xl')"> XL (￦23,500)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu5_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('포테이토 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('main_menu5')">-</button>
+                                                <span id="quantity_main5">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('main_menu5')">+</button>
                                             </div>  
                                         </div>                 
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="main_menu6">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/steak.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>스테이크</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>￦28,000</h5>
+                                            <div class="size-control" >
+									             <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu6" id="size_x" onchange="updatePrice('main_menu6', 'l')"> L (￦28,000)
+									            </label>
+									            <label class="genric-btn danger circle">
+									                <input type="radio" name="size_main_menu6" id="size_l" onchange="updatePrice('main_menu6', 'xl')"> XL (￦31,000)
+									            </label>
+									        </div>
+									        <h5>￦<span id="main_menu6_price">0</span></h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('스테이크 피자')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('main_menu6')">-</button>
+                                                <span id="quantity_main6">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('main_menu6')">+</button>
                                             </div> 
                                         </div>                 
                                         </div>
@@ -235,11 +270,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade single-member" id="Side" role="tabpanel"
-                            aria-labelledby="Side-tab">
+
+<hr/>
+	<h3>
+		<label style="display: block; text-align: center;" >
+			<strong>사이드 메뉴</strong>
+		</label>
+	</h3>
+	<br/>
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="side_menu1">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>치즈볼</h3>
@@ -247,17 +288,14 @@
                                             <h5>￦6,900</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('치즈볼')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('side_menu1')">-</button>
+                                                <span id="quantity_side1">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('side_menu1')">+</button>
                                             </div> 
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="side_menu2">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>핫 윙</h3>
@@ -265,17 +303,14 @@
                                             <h5>￦9,800</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('핫 윙')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('side_menu2')">-</button>
+                                                <span id="quantity_side2">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('side_menu2')">+</button>
                                             </div> 
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="side_menu3">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/carbonara.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>까르보나라</h3>
@@ -283,19 +318,16 @@
                                             <h5>￦9,800</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('까르보나라')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('side_menu3')">-</button>
+                                                <span id="quantity_side3">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('side_menu3')">+</button>
                                             </div> 
                                         </div>
                                     </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="side_menu4">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/bolognese.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>볼로네제 파스타</h3>
@@ -303,17 +335,14 @@
                                             <h5>￦9,800</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('볼로네제 파스타')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('side_menu4')">-</button>
+                                                <span id="quantity_side4">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('side_menu4')">+</button>
                                             </div> 
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="side_menu5">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>코울슬로</h3>
@@ -321,12 +350,9 @@
                                             <h5>￦2,400</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('코울슬로')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('side_menu5')">-</button>
+                                                <span id="quantity_side5">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('side_menu5')">+</button>
                                             </div> 
                                         </div>
                                         </div>
@@ -334,60 +360,103 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade single-member" id="Drink" role="tabpanel"
-                            aria-labelledby="Drink-tab">
+                        <hr/>
+                        <h3>
+		<label style="display: block; text-align: center;" >
+			<strong>음료</strong>
+		</label>
+	</h3>
+	<br/>
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="drink_menu1">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/coke.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.25L ￦2300 500ml ￦1700</h5>
+                                            <h5>1.25L ￦2300</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('콜라')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('drink_menu1')">-</button>
+                                                <span id="quantity_drink1">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('drink_menu1')">+</button>
                                             </div> 
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="drink_menu2">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>제로 콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.25L ￦2300 500ml ￦1700</h5>
+                                            <h5>1.25L ￦2300</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('제로 콜라')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity(this)">-</button>
+                                                <span id="quantity_drink2">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity(this)">+</button>
                                             </div> 
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="single_food_item media">
+                                    <div class="single_food_item media" id="drink_menu3">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/sprite.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
                                             <h3>스프라이트</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.5L ￦2400 500ml ￦1700</h5>
+                                            <h5>1.5L ￦2400</h5>
                                         <div class="product">
                                             <div class="quantity-control">
-                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                                                <span id="quantity">1</span>
-                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
-                                                <button class="btn_addCart" onclick="addToCart('스프라이트')">장바구니</button>
-                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
-                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                                <button class="quantity-button" onclick="decreaseQuantity('drink_menu3')">-</button>
+                                                <span id="quantity_drink3">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('drink_menu3')">+</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-lg-6">
+                                    <div class="single_food_item media" id="drink_menu4">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/coke.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>콜라</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity('drink_menu4')">-</button>
+                                                <span id="quantity_drink4">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('drink_menu4')">+</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="single_food_item media" id="drink_menu5">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>제로 콜라</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity('drink_menu5')">-</button>
+                                                <span id="quantity_drink5">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('drink_menu5')">+</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="single_food_item media" id="drink_menu6">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/sprite.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>스프라이트</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity('drink_menu6')">-</button>
+                                                <span id="quantity_drink6">0</span>
+                                                <button class="quantity-button" onclick="increaseQuantity('drink_menu6')">+</button>
                                             </div> 
                                         </div>
                                         </div>
@@ -395,17 +464,23 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-            </div> 
-            </div>
-        </div>
     </section>
   
     <!-- food_menu part end-->
 
-
-
+	<!-- 주문 확인 창 start -->
+	<div id="orderConfirmation">
+	
+	</div>
+	<div>
+		<button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
+		data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+	</div>
+	<!--  주문 확인 창 end -->
+	
     <!-- footer part start-->
     <footer class="footer-area">
         <div class="container">
@@ -502,11 +577,127 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
     <script src="${pageContext.request.contextPath}/js/custom.js"></script>
+    <script>
+    // 초기 수량 값을 0로 설정
+    var quantities = {
+    	'main_menu1_l': 0, 
+        'main_menu1_xl': 0, 
+        'main_menu2_l': 0, 
+        'main_menu2_xl': 0,
+        'main_menu3_l': 0,
+        'main_menu3_xl': 0,
+        'main_menu4_l': 0,
+        'main_menu4_xl': 0,
+        'main_menu5_l': 0,
+        'main_menu5_xl': 0,
+        'main_menu6_l': 0,
+        'main_menu6_xl': 0,
+        'side_menu1': 0,
+        'side_menu2': 0,
+        'side_menu3': 0,
+        'side_menu4': 0,
+        'side_menu5': 0,
+        'drink_menu1': 0,
+        'drink_menu2': 0,
+        'drink_menu3': 0,
+        'drink_menu4': 0,
+        'drink_menu5': 0,
+        'drink_menu6': 0
+        // 나머지 메뉴 항목들도 동일한 방식으로 추가
+    };
+    
+    var menuNames = {
+    		  'main_menu1': '불고기',
+    		  'main_menu2': '콰트로',
+    		  'main_menu3': '씨푸드',
+    		  'main_menu4': '페퍼로니',
+    		  'main_menu5': '포테이토',
+    		  'main_menu6': '스테이크',
+    		  'side_menu1': '치즈볼',
+    		  'side_menu2': '핫윙',
+    		  'side_menu3': '까르보나라',
+    		  'side_menu4': '볼로네제 파스타',
+    		  'side_menu5': '코울슬로',
+    		  'drink_menu1': '콜라 1.25L',
+    		  'drink_menu2': '제로콜라 1.25L',
+    		  'drink_menu3': '스프라이트 1.25L',
+    		  'drink_menu4': '콜라 500ml',
+    		  'drink_menu4': '제로콜라 500ml',
+    		  'drink_menu4': '스프라이트 500ml',
+    		};
+
+    var prices = {
+    		'main_menu1_l': 22500,
+            'main_menu1_xl': 25500,
+    		'main_menu2_l': 29500,
+            'main_menu2_xl': 32500,
+            'main_menu3_l': 30000,
+            'main_menu3_xl': 33000,
+            'main_menu4_l': 18500,
+            'main_menu4_xl': 21500,
+            'main_menu5_l': 20500,
+            'main_menu5_xl': 23500,
+            'main_menu6_l': 28000,
+            'main_menu6_xl': 31000,
+        };
+    
+ 	// 가격 업데이트 함수
+    function updatePrice(menuId, size) {
+        var priceId = menuId + '_' + size; // 가격 정보를 가져올 때 사이즈를 구분하기 위해 menuId와 size를 합친 고유 ID를 생성
+        var priceElement = document.getElementById(menuId + '_price'); // 해당 메뉴 항목의 가격 표시하는 요소
+        var price = prices[priceId].toLocaleString(); // 가격을 화폐 형식으로 변환
+        priceElement.textContent = price; // 가격 업데이트
+    }
+    
+ // 수량을 증가시키는 함수
+    function increaseQuantity(menuId) {
+      quantities[menuId]++; // 해당 메뉴 항목의 수량 증가
+      updateQuantity(menuId); // 해당 메뉴 항목의 수량 업데이트
+      updateOrderConfirmation(); // 주문 확인 창 업데이트
+    }
+
+    // 수량을 감소시키는 함수
+    function decreaseQuantity(menuId) {
+      if (quantities[menuId] > 0) {
+        quantities[menuId]--; // 해당 메뉴 항목의 수량 감소 (0보다 작을 경우 음수로 가지 않도록 체크)
+        updateQuantity(menuId); // 해당 메뉴 항목의 수량 업데이트
+        updateOrderConfirmation(); // 주문 확인 창 업데이트
+      }
+    }
+
+ // 화면에 수량 업데이트
+    function updateQuantity(menuId) {
+    if (menuId.startsWith('main_')) {
+        document.getElementById('quantity_main' + menuId.slice(-1)).textContent = quantities[menuId];
+    } else if (menuId.startsWith('side_')) {
+        document.getElementById('quantity_side' + menuId.slice(-1)).textContent = quantities[menuId];
+    } else{
+    	document.getElementById('quantity_drink' + menuId.slice(-1)).textContent = quantities[menuId];
+    }
+    }
+ 
+ 
+    function updateOrderConfirmation() {
+    	  var orderConfirmationElement = document.getElementById('orderConfirmation');
+    	  orderConfirmationElement.innerHTML = ''; // 이전 내용을 지웁니다.
+
+    	  // quantities 객체에서 수량이 0이 아닌 항목을 찾아서 주문 확인 창에 추가합니다.
+    	  for (var menuId in quantities) {
+    	    if (quantities.hasOwnProperty(menuId) && quantities[menuId] !== 0) {
+    	      var menuName = menuNames[menuId]; // 메뉴 이름 가져오기
+    	      var quantity = quantities[menuId]; // 수량 가져오기
+
+    	      // 주문 확인 창에 메뉴 이름과 수량을 추가합니다.
+    	      var menuItem = document.createElement('p');
+    	      menuItem.textContent = menuName + ': ' + quantity;
+    	      orderConfirmationElement.appendChild(menuItem);
+    	    }
+    	  }
+    	}
+
+    	// 페이지 로드 시 주문 확인 창을 업데이트합니다.
+    	window.addEventListener('load', updateOrderConfirmation);
+    </script>
+    
 </body>
-<script>
-    function redirectToPage() {
-    // 주문 창으로 이동
-    window.location.href = '${pageContext.request.contextPath}/menu/order.jsp';
-}
-</script>
 </html>
