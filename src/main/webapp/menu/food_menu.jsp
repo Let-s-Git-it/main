@@ -355,7 +355,7 @@
                                         <div class="media-body align-self-center">
                                             <h3>콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.25L ￦2300 500ml ￦1700</h5>
+                                            <h5>1.25L ￦2300</h5>
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button" onclick="decreaseQuantity()">-</button>
@@ -373,7 +373,7 @@
                                         <div class="media-body align-self-center">
                                             <h3>제로 콜라</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.25L ￦2300 500ml ￦1700</h5>
+                                            <h5>1.25L ￦2300</h5>
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button" onclick="decreaseQuantity()">-</button>
@@ -391,7 +391,63 @@
                                         <div class="media-body align-self-center">
                                             <h3>스프라이트</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>1.5L ￦2400 500ml ￦1700</h5>
+                                            <h5>1.5L ￦2400</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                                                <span id="quantity">1</span>
+                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                                                <button class="btn_addCart" onclick="addToCart('스프라이트')">장바구니</button>
+                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
+                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                 </div>       
+                                 </div>
+                                    <div class="col-sm-6 col-lg-6">
+                                    <div class="single_food_item media">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/coke_500.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>콜라</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                                                <span id="quantity">1</span>
+                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                                                <button class="btn_addCart" onclick="addToCart('콜라')">장바구니</button>
+                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
+                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="single_food_item media">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke_500.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>제로 콜라</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
+                                        <div class="product">
+                                            <div class="quantity-control">
+                                                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                                                <span id="quantity">1</span>
+                                                <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                                                <button class="btn_addCart" onclick="addToCart('제로 콜라')">장바구니</button>
+                                                <button type="button" class="btn_quick_order" id="orderButton" data-spoid="2892" 
+                                                        data-productid="-1" data-salesprice="0" onclick="redirectToPage()">주문</button>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="single_food_item media">
+                                        <img src="${pageContext.request.contextPath}/img/food_menu/sprite_500.png" class="mr-3" alt="...">
+                                        <div class="media-body align-self-center">
+                                            <h3>스프라이트</h3>
+                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <h5>500ml ￦1700</h5>
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button" onclick="decreaseQuantity()">-</button>
