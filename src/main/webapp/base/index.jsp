@@ -78,9 +78,9 @@
                             </ul>
                         </div>
                         <div class="menu_btn">
-                            <a href="${pageContext.request.contextPath}/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
+                            <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
                         </div>   <div class="menu_btn">
-                            <a href="${pageContext.request.contextPath}/loginview.jsp" class="btn_1 d-none d-sm-block">로그인</a>
+                            <a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">로그인</a>
                         </div>
                     </nav>
                 </div>
