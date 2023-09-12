@@ -130,7 +130,7 @@
                                     <div class="single_food_item media" id="main_menu1">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
-                                            <h3 id="main_menu1_name">불고기</h3>
+                                            <h3>불고기</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
                                             <div class="size-control" >
 									             <label class="genric-btn danger circle">
@@ -153,7 +153,7 @@
                                     <div class="single_food_item media" id="main_menu2">
                                         <img src="${pageContext.request.contextPath}/img/food_menu/quatro.png" class="mr-3" alt="...">
                                         <div class="media-body align-self-center">
-                                            <h3 id="main_menu2_name">콰트로</h3>
+                                            <h3>콰트로</h3>
                                             <p>They're wherein heaven seed hath nothing</p>
                                             <div class="size-control" >
 									             <label class="genric-btn danger circle">
@@ -606,6 +606,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         // 나머지 메뉴 항목들도 동일한 방식으로 추가
     };
     
+    //menu id 설정
     var menuNames = {
     		  'main_menu1': '불고기',
     		  'main_menu2': '콰트로',

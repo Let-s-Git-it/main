@@ -142,9 +142,53 @@
           }
         </script>
         <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnd-3fKD3zOt7a3K6bjB0-y3WduVY190E&callback=initMap">       	
         </script>
+        <script>
+        var map;
+        var infoWindow;
 
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 0, lng: 0}, // 초기 맵 중심 위치를 설정하세요.
+                zoom: 15 // 줌 레벨을 원하는 값으로 설정하세요.
+            });
+
+            infoWindow = new google.maps.InfoWindow;
+
+            // 현재 위치 가져오기
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('현재 위치');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // 브라우저가 Geolocation을 지원하지 않는 경우
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                '오류: 위치 정보를 가져올 수 없습니다.' :
+                '오류: 브라우저가 Geolocation을 지원하지 않습니다.');
+            infoWindow.open(map);
+        }
+
+        // initMap 함수를 호출하여 지도를 초기화합니다.
+        initMap();
+    </script>
+		
       </div>
 
 

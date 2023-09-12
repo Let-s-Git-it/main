@@ -77,11 +77,33 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="menu_btn">
+                        <div class="menu_btn" id="loginBtn">
                             <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                        </div>   <div class="menu_btn">
+                        </div>   
+                        <div class="menu_btn" id="signupBtn">
                             <a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">로그인</a>
                         </div>
+                        <div class="menu_btn" id="logoutBtn" style="display: none;">
+    						<a href="#" class="btn_1 d-none d-sm-block">로그아웃</a>
+						</div>
+                        <script>
+                    		 // 로그인 상태를 확인하는 변수 (가정)
+                        	 var isLoggedIn = true; // 또는 false
+
+                        	// 페이지 로드 시 실행되는 함수
+                        	window.onload = function () {
+                            // 로그인 상태에 따라 버튼 표시/숨김 처리
+                            if (isLoggedIn) {
+                                document.getElementById("loginBtn").style.display = "none";
+                                document.getElementById("signupBtn").style.display = "none";
+                                document.getElementById("logoutBtn").style.display = "block";
+                            } else {
+                                document.getElementById("loginBtn").style.display = "block";
+                                document.getElementById("signupBtn").style.display = "block";
+                                document.getElementById("logoutBtn").style.display = "none";
+                            }
+                        };
+                        </script>
                     </nav>
                 </div>
             </div>
@@ -96,16 +118,14 @@
                 <div class="col-lg-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Expensive but the best</h5>
-                            <h1>Deliciousness jumping into the mouth</h1>
-                            <p>Together creeping heaven upon third dominion be upon won't darkness rule land
-                                behold it created good saw after she'd Our set living. Signs midst dominion
-                                creepeth morning</p>
+                            <h5>Lets Git it</h5>
+                            <h2>Pizza Order</h2>
+                            <p>맛있는 피자 우리 피자 배달 공짜♪</p>
                             <div class="banner_btn">
                                 <div class="banner_btn_iner">
                                     <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
                                 </div>
-                                <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube video_popup">
+                                <a href="https://www.youtube.com/watch?v=EvPMHHjYzj0" class="popup-youtube video_popup">
                                     <span><img src="${pageContext.request.contextPath}/img/icon/play.svg" alt=""></span> Watch our story</a>
                             </div>
                         </div>
