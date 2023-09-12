@@ -118,16 +118,14 @@
                 <div class="col-lg-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Expensive but the best</h5>
-                            <h1>Deliciousness jumping into the mouth</h1>
-                            <p>Together creeping heaven upon third dominion be upon won't darkness rule land
-                                behold it created good saw after she'd Our set living. Signs midst dominion
-                                creepeth morning</p>
+                            <h5>Lets Git it</h5>
+                            <h2>Pizza Order</h2>
+                            <p>맛있는 피자 우리 피자 배달 공짜♪</p>
                             <div class="banner_btn">
                                 <div class="banner_btn_iner">
                                     <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
                                 </div>
-                                <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube video_popup">
+                                <a href="https://www.youtube.com/watch?v=EvPMHHjYzj0" class="popup-youtube video_popup">
                                     <span><img src="${pageContext.request.contextPath}/img/icon/play.svg" alt=""></span> Watch our story</a>
                             </div>
                         </div>
