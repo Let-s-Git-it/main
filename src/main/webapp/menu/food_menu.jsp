@@ -53,13 +53,13 @@
                                     <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="food_menu.jsp">메뉴</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/blog.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,7 +140,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>불고기</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>프리미엄 불고기 토핑이 듬뿍</p>
                                             <h5>￦22,500</h5>
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>콰트로</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>4가지 피자를 한 판에</p>
                                             <h5>￦29,500</h5>
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>씨푸드</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>바다와 육지의 대왕이 하나로</p>
                                             <h5>￦30,000</h5>
                                         </div>
                                     </div>
@@ -172,7 +172,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>페퍼로니</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>짭짤한 풍미의 페퍼로니, 파마산+로마노 치즈가 토핑</p>
                                             <h5>￦18,500</h5>
                                         </div>
                                     </div>
@@ -182,7 +182,7 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>포테이토</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>신선한 감자와 고소한 치즈의 환상 조합</p>
                                             <h5>￦20,500</h5>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>스테이크</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>카우보이들이 즐겨 먹던 정통 그릴드 비프 스테이크의 재현</p>
                                             <h5>￦28,000</h5>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>치즈볼</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>맥앤치즈 필링에 자꾸만 손이 가는 매력적인 맛</p>
                                             <h5>￦6,900</h5>
                                         </div>
                                     </div>
@@ -219,7 +219,7 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>핫 윙</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>웨스턴 스타일로 매콤하게</p>
                                             <h5>￦9,800</h5>
                                         </div>
                                     </div>
@@ -229,7 +229,7 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>까르보나라</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>짭짤한 베이컨과 풍미 있는 까르보나라 소스가 어우러진</p>
                                             <h5>￦9,800</h5>
                                     	</div>
                                     </div>
@@ -241,7 +241,7 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>볼로네제 파스타</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>정통 이탈리안 볼로네즈 소스 베이스에 달달한 페타 크림 치즈를 덮어 풍미를 높이다</p>
                                             <h5>￦9,800</h5>
                                         </div>
                                     </div>
@@ -251,7 +251,7 @@
  									</a>
                                         <div class="media-body align-self-center">
                                             <h3>코울슬로</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
+                                            <p>아삭한 양배추와 각종 야채를 소스와 버무려 새콤달콤한 맛이 가득</p>
                                             <h5>￦2,400</h5>
                                         </div>
                                     </div>
@@ -268,7 +268,6 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>콜라</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
                                             <h5>1.25L ￦2300</h5>
                                         </div>
                                     </div>
@@ -278,7 +277,6 @@
                                     </a>    
                                         <div class="media-body align-self-center">
                                             <h3>제로 콜라</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
                                             <h5>1.25L ￦2300</h5>
                                         </div>
                                     </div>
@@ -288,7 +286,6 @@
                                  </a>
                                     <div class="media-body align-self-center">
                                     	<h3>스프라이트</h3>
-                                        <p>They're wherein heaven seed hath nothing</p>
                                         <h5>1.5L ￦2400</h5>
                                  	</div>
                                  </div>       
@@ -300,7 +297,6 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>콜라</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
                                             <h5>500ml ￦1700</h5>
                                         </div>
                                     </div>
@@ -310,7 +306,6 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>제로 콜라</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
                                             <h5>500ml ￦1700</h5>
                                         </div>
                                     </div>
@@ -320,7 +315,6 @@
                                     </a>
                                         <div class="media-body align-self-center">
                                             <h3>스프라이트</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
                                             <h5>500ml ￦1700</h5>
                                         </div>
                                     </div>
@@ -335,26 +329,6 @@
   
     <!-- food_menu part end-->
     <!--::chefs_part end::-->
-
-    <!-- intro_video_bg start-->
-    <section class="intro_video_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro_video_iner text-center">
-                        <h2>Expect The Best</h2>
-                        <div class="intro_video_icon">
-                            <a id="play-video_1" class="video-play-button popup-youtube"
-                                href="https://www.youtube.com/watch?v=pBFQdxA-apI">
-                                <span class="ti-control-play"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- intro_video_bg part start-->
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -452,11 +426,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
     <script src="${pageContext.request.contextPath}/js/custom.js"></script>
-    <script>
-    	function redirectToPage() {
-    	// 주문 창으로 이동
-    	window.location.href = '${pageContext.request.contextPath}/menu/order.jsp';
-		}
-	</script>
 </body>
 </html>
