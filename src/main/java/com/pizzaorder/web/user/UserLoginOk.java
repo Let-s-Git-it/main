@@ -15,17 +15,22 @@ public class UserLoginOk implements Action {
         UserDAO udao = new UserDAO();
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
-        System.out.println("userid: " + userid);
-        System.out.println("userpw: " + userpw);
+    /*    System.out.println("userid: " + userid);
+        System.out.println("userpw: " + userpw);*/
 
         if (udao.logincheck(userid, userpw)) {
             forward.setPath("/base/index.jsp");
         } else {
+            request.setAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
             forward.setPath("/login/loginview.jsp");
         }
 
         System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
 
         return forward;
+
+
     }
+
+
 }

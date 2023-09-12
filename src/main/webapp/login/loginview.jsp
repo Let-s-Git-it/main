@@ -18,11 +18,11 @@
             margin: 40px auto;
         }
 
-        h5 {
+        h3 {
             text-align: center;
         }
 
-        h5 span {
+        h3 span {
             color: teal;
         }
 
@@ -51,13 +51,13 @@
 
         #imail {
             position: absolute;
-            top: 130px;
+            top: 250px;
             margin: 0 355px;
         }
 
         #ipw {
             position: absolute;
-            top: 180px;
+            top: 300px;
             margin: 0 355px;
         }
 
@@ -85,16 +85,23 @@
     <div id="ipw">
         <i class="material-icons">lock_outline</i>
     </div>
-    <h5><span>로그인</span> 페이지입니다.</h5>
+    <br/><br/>
+    <h3><span>로그인</span> 페이지입니다.</h3>
     <hr/>
     <form action="${pageContext.request.contextPath}/user/UserLoginOk.us" method="post" name="userlogin">
         <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 380px"/><br/>
         <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 380px"/><br/>
-        <input type="submit" value="로그인" class="login"/>
+        <input type="submit" value="로그인" class="login" onclick="return logincheck(userlogin.userid.value,userlogin.userpw.value);"/>
         <button onclick="location.href='${pageContext.request.contextPath}/base/index.jsp'" class="login">HOME</button>
     </form>
-    <p> </p>
     <hr/>
+    <p id="loginError" style="color: red;">
+            <% if (request.getAttribute("loginError") != null) { %>
+            <%= request.getAttribute("loginError") %>
+            <% } %>
+    <p> </p>
+
+    <script src="user.js"></script>
 </div>
 
 </body>
