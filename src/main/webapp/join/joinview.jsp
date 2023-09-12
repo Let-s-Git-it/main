@@ -1,5 +1,7 @@
+<%@ page import="com.pizzaorder.web.user.dao.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +18,14 @@
             line-height: 16px;
         }
 
-        h5 {
+        h3 {
             text-align: center;
         }
 
-        h5 span {
+        h3 span {
             color: teal;
         }
 
-        .n {
-            font-size: 13px;
-        }
 
         #signup {
             background-color: rgb(255, 80, 90);
@@ -43,104 +42,54 @@
             font-size: 16px;
         }
 
-        i {
-            color: lightgray;
-        }
-
-
-        #iperson1 {
-            position: absolute;
-            top: 185px;
-            margin: 0 250px;
-        }
-
-        #ipw {
-            position: absolute;
-            top: 235px;
-            margin: 0 250px;
-        }
-
-
-        #ipw2 {
-            position: absolute;
-            top: 285px;
-            margin: 0 250px;
-        }
-
-        #iperson2 {
-            position: absolute;
-            top: 335px;
-            margin: 0 250px;
-        }
 
         input {
             border: 1px solid lightgray;
             border-radius: 3px;
+            padding: 10px 168px;
         }
     </style>
 </head>
 
 <body>
+
 <div class="container">
-
-    <div id="iperson1">
-        <i class="material-icons">person_outline</i>
-    </div>
-    <div id="ipw">
-        <i class="material-icons">lock_outline</i>
-    </div>
-    <div id="ipw2">
-        <i class="material-icons">lock_outline</i>
-    </div>
-    <div id="iperson2">
-        <i class="material-icons">person_outline</i>
-    </div>
-
     <br/><br/>
-    <h5><span>회원 가입</span> 페이지입니다.</h5>
+    <h3><span>회원 가입</span> 페이지입니다.</h3>
     <hr/>
     <form action="/user/userJoin.us" method="post" name="userform">
-        <p id="isResult">아이디 확인</p>
-        <p>
-            <label>아이디: </label>
-            <input type="text" placeholder="아이디" name="userid" autocomplete="userid" required
-                   style="height:30px; width: 240px"/>
-            <input type="button" onclick="checkId(userform.userid.value);" value="중복확인"> <br/>
-        </p>
-        <p>
-            <label>비밀번호: </label>
-            <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 220px"/><br/>
-            <label>비밀번호 확인: </label>
-            <input type="password" placeholder="비밀번호 확인" name="userpw_re" required
-                   style="height:30px; width: 180px"/><br/>
-        </p>
-        <p>
-            <label>이름: </label>
-            <input type="text" placeholder="이름" name="username" required style="height:30px; width: 260px"/><br/>
-        </p>
-        <p>
-            <label>전화번호: </label>
-            <input type="text" placeholder="전화번호" name="userphone" required style="height:30px; width: 180px"/><br/>
-        </p>
-        <P>
-            우편번호
-            <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode">
-            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-        </P>
-        <P>
-            주소
-            <input type="text" id="sample6_address" placeholder="주소" name="addr"><br>
-        </P>
-        <P>
-            참고항목
-            <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc">
-        </P>
-        <P> 상세주소
-            <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail">
+        <h4>* 아이디
+            <button id="idCheck" type="button" onclick="checkId(userform.userid.value);">중복확인</button>
+        </h4>
+<%--        <span class="input_area">--%>
+            <input type="text" name="userid" placeholder=" 5자이상 16자 미만 입력" required></span>
+        <br/><label id="isResult"></label>
 
-        </P>
-        <input type="button" value="가입완료" onclick="sendit();" id="signup"/><br/><br/>
+        <h4>* 비밀번호</h4>
+        <span class="input_area"><input type="password" maxlength="15" id="userpw" placeholder="8자 이상 기입"></span>
+        <h4>* 비밀번호 확인</h4>
+        <span class="input_area"><input type="password" maxlength="15" id="userpw_re"
+                                        onkeyup="checkPw(userform.userpw.value, userform.userpw_re.value)"></span>
+        <label id="pwdResult" class="error"></label>
 
+        <h4>* 이름</h4>
+        <span class="input_area"><input type="text" maxlength="5" name="username" required></span>
+
+        <h4>* 연락처</h4>
+        <span class="input_area"><input type="tel" maxlength="11" name="userphone"
+                                        placeholder="(-없이)01012345678"></span>
+        <h4>우편번호
+            <button type="button" onclick="sample6_execDaumPostcode()" value="검색">검색</button></h4>
+        <span class="input_area"><input type="text" name="zipcode" id="sample6_postcode"></span>
+
+        <h4>도로명주소</h4>
+        <span class="input_area"><input type="text" name="addr" id="sample6_address"></span>
+        <h4>상세주소</h4>
+        <span class="input_area"><input type="text" name="addretc" id="sample6_extraAddress"></span>
+        <h4>참고항목</h4>
+        <span class="input_area"><input type="text" name="addrdetail" id="sample6_detailAddress"></span>
+        <h2></h2>
+        <input type="button" value="가입완료" onclick="sendit();" id="signup"/>
     </form>
 
     <hr/>

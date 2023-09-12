@@ -2,7 +2,6 @@ function sendit () {
   let frm = document.userform;
   let idTag = frm.userid;
   let pwTag = frm.userpw;
-  let pwCheckTag = frm.userpw_re;
   let nameTag = frm.username;
   let phoneTag = frm.userphone;
   let zipTag = frm.zipcode;
@@ -28,16 +27,6 @@ function sendit () {
     return false;
   }
 
-  if (pwTag.value.length < 8) {
-    alert('8자 이상 기입해주세요');
-    return false;
-  }
-
-  if (pwTag.value != pwCheckTag.value) {
-    alert('비밀번호가 일치하지 않습니다.');
-    return false;
-  }
-
   if (nameTag.value == '') {
     alert('이름을 입력해주세요');
     return false;
@@ -54,6 +43,40 @@ function sendit () {
     alert('주소를 입력해주세요');
   }
   frm.submit();
+}
+
+//비밀번호 중복 체크
+function checkPw(userpw, userpw_re) {
+  var pwdResult = document.getElementById('pwdResult');
+
+  if (userpw !== userpw_re) {
+    pwdResult.innerHTML = '비밀번호가 일치하지 않습니다..';
+  } else {
+    pwdResult.innerHTML = '';
+  }
+}
+
+
+// 아이디 중복체크
+function checkId (userid) {
+  //alert(userid);
+  if (userid == '') {
+    alert('아이디를 입력해주세요');
+    return false;
+  } else {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'idcheck.jsp?userid=' + userid, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
+        if (xhr.responseText.trim() == 'ok') {
+          document.getElementById('isResult').innerHTML = '사용 가능한 아이디입니다.';
+        } else {
+          document.getElementById('isResult').innerHTML = '이미 사용중인 아이디입니다.';
+        }
+      }
+    };
+  }
 }
 
 function logincheck (userid, userpw) {
@@ -98,28 +121,6 @@ function logincheck (userid, userpw) {
     };
   }
   frm.submit();
-}
-
-// 아이디 중복체크
-function checkId (userid) {
-  //alert(userid);
-  if (userid == '') {
-    alert('아이디를 입력해주세요');
-    return false;
-  } else {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'idcheck.jsp?userid=' + userid, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
-        if (xhr.responseText.trim() == 'ok') {
-          document.getElementById("isResult").innerHTML = "사용 가능한 아이디입니다.";
-        } else {
-          document.getElementById('isResult').innerHTML = '이미 사용중인 아이디입니다.';
-        }
-      }
-    };
-  }
 }
 
 function sample6_execDaumPostcode () {
