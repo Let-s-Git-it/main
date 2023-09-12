@@ -103,7 +103,7 @@
                                 creepeth morning</p>
                             <div class="banner_btn">
                                 <div class="banner_btn_iner">
-                                    <a href="${pageContext.request.contextPath}/order.jsp" class="btn_2">주문하기 <img src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
+                                    <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
                                 </div>
                                 <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube video_popup">
                                     <span><img src="${pageContext.request.contextPath}/img/icon/play.svg" alt=""></span> Watch our story</a>

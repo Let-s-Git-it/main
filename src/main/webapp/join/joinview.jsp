@@ -50,27 +50,27 @@
 
         #iperson1 {
             position: absolute;
-            top: 160px;
-            margin: 0 275px;
+            top: 185px;
+            margin: 0 250px;
         }
 
         #ipw {
             position: absolute;
-            top: 210px;
-            margin: 0 275px;
+            top: 235px;
+            margin: 0 250px;
         }
 
 
         #ipw2 {
             position: absolute;
-            top: 260px;
-            margin: 0 275px;
+            top: 285px;
+            margin: 0 250px;
         }
 
         #iperson2 {
             position: absolute;
-            top: 310px;
-            margin: 0 275px;
+            top: 335px;
+            margin: 0 250px;
         }
 
         input {
@@ -99,17 +99,29 @@
     <br/><br/>
     <h5><span>회원 가입</span> 페이지입니다.</h5>
     <hr/>
-    <br/>
-
     <form action="/user/userJoin.us" method="post" name="userform">
-        <input type="text" placeholder="아이디" name="userid" autocomplete="userid" required
-               style="height:30px; width: 300px"/>
-        <input type="button" onclick="checkId(userform.userid.value);" value="중복확인"> <br/><br/>
-        <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 300px"/><br/><br/>
-        <input type="password" placeholder="비밀번호 확인" name="userpw_re" required
-               style="height:30px; width: 300px"/><br/><br/>
-        <input type="text" placeholder="이름" name="username" required style="height:30px; width: 300px"/><br/><br/>
-        <input type="text" placeholder="전화번호" name="userphone" required style="height:30px; width: 300px"/><br/><br/>
+        <p id="isResult">아이디 확인</p>
+        <p>
+            <label>아이디: </label>
+            <input type="text" placeholder="아이디" name="userid" autocomplete="userid" required
+                   style="height:30px; width: 240px"/>
+            <input type="button" onclick="checkId(userform.userid.value);" value="중복확인"> <br/>
+        </p>
+        <p>
+            <label>비밀번호: </label>
+            <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 220px"/><br/>
+            <label>비밀번호 확인: </label>
+            <input type="password" placeholder="비밀번호 확인" name="userpw_re" required
+                   style="height:30px; width: 180px"/><br/>
+        </p>
+        <p>
+            <label>이름: </label>
+            <input type="text" placeholder="이름" name="username" required style="height:30px; width: 260px"/><br/>
+        </p>
+        <p>
+            <label>전화번호: </label>
+            <input type="text" placeholder="전화번호" name="userphone" required style="height:30px; width: 180px"/><br/>
+        </p>
         <P>
             우편번호
             <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode">
@@ -123,13 +135,12 @@
             참고항목
             <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc">
         </P>
-        <P>
-            상세주소
+        <P> 상세주소
             <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail">
+
         </P>
-        <P>
-            <input type="button" value="가입완료" onclick="sendit();" id="signup"/><br/><br/>
-        </P>
+        <input type="button" value="가입완료" onclick="sendit();" id="signup"/><br/><br/>
+
     </form>
 
     <hr/>
