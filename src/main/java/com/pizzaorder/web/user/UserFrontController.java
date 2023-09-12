@@ -38,17 +38,15 @@ protected void doProcess(HttpServletRequest request,
 	String responseURI = null;
 	ActionForward forward = null;
 
-	//System.out.println(">>>>>>>>>>>>> requestURI : " + requestURI);
+	System.out.println(">>>>>>>>>>>>> requestURI : " + requestURI);
 
 	if(requestURI.equals("/user/userJoin.us")) {
 		forward = new UserjoinAction().execute(request, response);
-//	}else if(requestURI.equals("/user/UserLogin.us")){
-//		forward = new ActionForward(false,"/login/loginview.jsp");
+		System.out.println(">>>>>>>>>>>>> requestURI : " + requestURI);
 	}
 	if("/user/UserLoginOk.us".equals(requestURI) ) {
-		//System.out.println(">>>>>>>>>>>>>>>>>>>>>>>> /user/UserLoginOK.us 호출 ...");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>> /user/UserLoginOK.us 호출 ...");
 		forward = new UserLoginOk().execute(request, response);
-		System.out.print("forward - FrontControlelr >>>>>>>>>>>>>>>>>>>> ");
 		System.out.println(forward);
 	} else {
 		System.out.println("path 못 찾음 .... " + requestURI);

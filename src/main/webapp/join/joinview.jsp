@@ -1,4 +1,3 @@
-<%@ page import="com.pizzaorder.web.user.dao.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -57,7 +56,7 @@
     <br/><br/>
     <h3><span>회원 가입</span> 페이지입니다.</h3>
     <hr/>
-    <form action="/user/userJoin.us" method="post" name="userform">
+    <form action="/user/userJoin.us" method="post" name="userform" onsubmit="return sendit();">
         <h4>* 아이디
             <button id="idCheck" type="button" onclick="checkId(userform.userid.value);">중복확인</button>
         </h4>
@@ -66,9 +65,9 @@
         <br/><label id="isResult"></label>
 
         <h4>* 비밀번호</h4>
-        <input type="password" maxlength="15" id="userpw" placeholder="8자 이상 기입"></span>
+        <input type="password" maxlength="15" name="userpw" placeholder="8자 이상 기입"></span>
         <h4>* 비밀번호 확인</h4>
-        <input type="password" maxlength="15" id="userpw_re"
+        <input type="password" maxlength="15" name="userpw_re"
                onkeyup="checkPw(userform.userpw.value, userform.userpw_re.value)"></span>
         <label id="pwdResult" class="error"></label>
 
@@ -76,10 +75,10 @@
         <input type="text" maxlength="5" name="username" required></span>
 
         <h4>* 연락처</h4>
-        <input type="tel" maxlength="11" name="userphone"
+        <input type="text" maxlength="11" name="userphone"
                placeholder="(-없이)01012345678"></span>
         <h4>우편번호
-            <button type="button" onclick="sample6_execDaumPostcode()" value="검색">검색</button>
+            <button type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">검색</button>
         </h4>
         <input type="text" name="zipcode" id="sample6_postcode"></span>
 

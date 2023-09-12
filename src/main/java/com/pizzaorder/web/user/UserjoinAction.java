@@ -33,6 +33,7 @@ public class UserjoinAction implements Action{
 			//회원가입 성공
 			forward.setPath("/login/loginview.jsp");
 		}else {
+			System.out.println(">>>>>>>>>>>>> joinActionforward : " + forward);
 			//회원가입 실패
 			forward.setPath("/index.jsp");
 		}
