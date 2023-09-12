@@ -19,7 +19,7 @@ public class UserLoginOk implements Action {
         System.out.println("userpw: " + userpw);
 
         if (udao.logincheck(userid, userpw)) {
-            forward.setPath("/base/index.html");
+            forward.setPath("/base/index.jsp");
         } else {
             forward.setPath("/login/loginview.jsp");
         }

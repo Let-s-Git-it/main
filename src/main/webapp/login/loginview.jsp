@@ -91,7 +91,7 @@
         <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 380px"/><br/>
         <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 380px"/><br/>
         <input type="submit" value="로그인" class="login"/>
-        <button onclick="location.href='/index.jsp'" class="login">HOME</button>
+        <button onclick="location.href='${pageContext.request.contextPath}/base/index.jsp'" class="login">HOME</button>
     </form>
     <p> </p>
     <hr/>
