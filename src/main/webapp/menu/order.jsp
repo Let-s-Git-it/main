@@ -606,6 +606,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         // 나머지 메뉴 항목들도 동일한 방식으로 추가
     };
     
+    //menu id 설정
     var menuNames = {
     		  'main_menu1': '불고기',
     		  'main_menu2': '콰트로',
