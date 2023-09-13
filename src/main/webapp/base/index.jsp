@@ -120,7 +120,9 @@
                         <div class="banner_text_iner">
                             <h5>Lets Git it</h5>
                             <h2>Pizza Order</h2>
-                            <p>맛있는 피자 우리 피자 배달 공짜♪</p>
+                            <p>맛있는 피자~♪ 우리 피자 배달 공짜♪<br>
+                            게살 피자 ㅂ풔풔풔풔풔풮풮 피자 맛있는 피자 게살 피자 둥궁딱 둥궁둥궁둥국딱 피자<br> 
+                            둥궁둥궁둥궁딱 피자 맛있는 ㅇ예예옝예예 피자~~ 게살~~ 피자~~~♪</p>
                             <div class="banner_btn">
                                 <div class="banner_btn_iner">
                                     <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
