@@ -71,8 +71,9 @@
                     <div class="menu_btn">
                         <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
                     </div>
+
                     <div class="menu_btn">
-                        <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                        <a id="loginButton" href="${pageContext.request.contextPath}/login/loginview.jsp"
                            class="btn_1 d-none d-sm-block">로그인</a>
                     </div>
                     <div class="menu_btn">
@@ -445,5 +446,6 @@
 <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
 <!-- custom js -->
 <script src="${pageContext.request.contextPath}/js/custom.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
