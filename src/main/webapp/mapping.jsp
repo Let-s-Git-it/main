@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dingo</title>
+    <title>네모바지 피자</title>
     <link rel="icon" href="${pageContext.request.contextPath}img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}css/bootstrap.min.css">
@@ -39,8 +39,9 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="base/index.jsp"> <img
-                            src="${pageContext.request.contextPath}img/logo.png" alt="logo"> </a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/base/index.jsp"> <img
+                            src="${pageContext.request.contextPath}/img/logo.png"
+                            alt="logo"> </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -54,16 +55,18 @@
                                 <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="menu/food_menu.jsp">Menu</a>
+                                <a class="nav-link"
+                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +88,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb_iner text-center">
                     <div class="breadcrumb_iner_item">
-                        <h2>Contact Us</h2>
+                        <h2>주변 매장 찾기</h2>
                     </div>
                 </div>
             </div>
