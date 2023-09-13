@@ -50,35 +50,24 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../about.jsp">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="menu/food_menu.jsp">Menu</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="chefs.jsp">Chefs</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="../blog.jsp" id="navbarDropdown"
-                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Blog
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="../blog.jsp">Blog</a>
-                                    <a class="dropdown-item" href="../menu/review.jsp">Single blog</a>
-                                    <a class="dropdown-item" href="../elements.jsp">Elements</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
                             </li>
                         </ul>
                     </div>
                     <div class="menu_btn">
-                        <a href="#" class="single_page_btn d-none d-sm-block">book a tabel</a>
+                        <a href="#" class="single_page_btn d-none d-sm-block">주문하기</a>
                     </div>
                 </nav>
             </div>
@@ -118,28 +107,22 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="single_blog_item">
                     <div class="single_blog_img">
-                        <img src="${pageContext.request.contextPath}/img/team/chefs_1.png" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/jiheon.jpg" alt="">
                     </div>
                     <div class="single_blog_text text-center">
-                        <h3>Adam Billiard</h3>
-                        <p>Chef Master</p>
-                        <div class="social_icon">
-                            <a href="#"> <i class="ti-facebook"></i> </a>
-                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                            <a href="#"> <i class="ti-instagram"></i> </a>
-                            <a href="#"> <i class="ti-skype"></i> </a>
-                        </div>
+                        <h3>김지헌</h3>
+                        <p>조장,BackEnd</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="single_blog_item">
                     <div class="single_blog_img">
-                        <img src="${pageContext.request.contextPath}/img/team/chefs_2.png" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/yeonghwan.png" alt="">
                     </div>
                     <div class="single_blog_text text-center">
-                        <h3>Fred Macyard</h3>
-                        <p>Chef Master</p>
+                        <h3>김영환</h3>
+                        <p>BackEnd</p>
                         <div class="social_icon">
                             <a href="#"> <i class="ti-facebook"></i> </a>
                             <a href="#"> <i class="ti-twitter-alt"></i> </a>
@@ -155,8 +138,8 @@
                         <img src="${pageContext.request.contextPath}/img/team/chefs_3.png" alt="">
                     </div>
                     <div class="single_blog_text text-center">
-                        <h3>Justin Stuard</h3>
-                        <p>Chef Master</p>
+                        <h3>노건우</h3>
+                        <p>BackEnd</p>
                         <div class="social_icon">
                             <a href="#"> <i class="ti-facebook"></i> </a>
                             <a href="#"> <i class="ti-twitter-alt"></i> </a>
@@ -166,14 +149,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4 d-none d-sm-block d-lg-none">
+            <div class="col-sm-6 col-lg-4">
                 <div class="single_blog_item">
                     <div class="single_blog_img">
-                        <img src="${pageContext.request.contextPath}/img/team/chefs_1.png" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/chefs_2.png" alt="">
                     </div>
                     <div class="single_blog_text text-center">
-                        <h3>Justin Stuard</h3>
-                        <p>Chef Master</p>
+                        <h3>김용진</h3>
+                        <p>FrontEnd</p>
                         <div class="social_icon">
                             <a href="#"> <i class="ti-facebook"></i> </a>
                             <a href="#"> <i class="ti-twitter-alt"></i> </a>
@@ -183,6 +166,41 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="single_blog_item">
+                    <div class="single_blog_img">
+                        <img src="${pageContext.request.contextPath}/img/team/chefs_2.png" alt="">
+                    </div>
+                    <div class="single_blog_text text-center">
+                        <h3>박지현</h3>
+                        <p>FrontEnd</p>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="single_blog_item">
+                    <div class="single_blog_img">
+                        <img src="${pageContext.request.contextPath}/img/team/jiyeon.png" alt="">
+                    </div>
+                    <div class="single_blog_text text-center">
+                        <h3>우지연</h3>
+                        <p>FullStack(FrontEnd,BackEnd)</p>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

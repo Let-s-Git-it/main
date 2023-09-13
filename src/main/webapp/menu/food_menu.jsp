@@ -59,17 +59,7 @@
                                     <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/blog.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/blog.jsp">Blog</a>
-                                        <a class="dropdown-item" href="review.jsp">Single blog</a>
-                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/elements.jsp">Elements</a>
-                                    </div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>

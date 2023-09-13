@@ -49,9 +49,6 @@
 									<a class="nav-link" href="base/index.jsp">Home</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="about.jsp">About</a>
-								</li>
-								<li class="nav-item">
 									<a class="nav-link" href="menu/food_menu.jsp">Menu</a>
 								</li>
 								<li class="nav-item">
@@ -62,9 +59,7 @@
 										Blog
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="blog.jsp">Blog</a>
 										<a class="dropdown-item" href="menu/review.jsp">Single blog</a>
-										<a class="dropdown-item" href="elements.jsp">Elements</a>
 									</div>
 								</li>
 								<li class="nav-item">
