@@ -1,6 +1,7 @@
 package com.pizzaorder.web.user.dao;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,7 +17,7 @@ public class UserDAO {
     }
 
     //회원가입
-    public boolean join(UserDTO user) {
+/*    public boolean join(UserDTO user) {
         boolean result = false;
         //1 param : 어떤 쿼리를 호출할지
         //2 param : 쿼리 실행시 필요한 파라미터 값
@@ -25,52 +26,52 @@ public class UserDAO {
         }
 
         return result;
+    }*/
+    public boolean join(UserDTO user) {
+        try (SqlSession sqlSession = factory.openSession(true)) {
+            int rowsInserted = sqlSession.insert("User.join", user);
+            return rowsInserted > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public boolean logincheck(String userid, String userpw) {
-        boolean result = false;
+        try (SqlSession sqlSession = factory.openSession()) {
+            Map<String, String> paramMap = new HashMap<>();
+            paramMap.put("userid", userid);
+            paramMap.put("userpw", userpw);
 
-        HashMap<String, String> datas = new HashMap<>();
-        datas.put("userid", userid);
-        datas.put("userpw", userpw);
-
-        if ((Integer) sqlSession.selectOne("User.logincheck", datas) == 1) {
-            result = true;
+            int count = sqlSession.selectOne("User.logincheck", paramMap);
+            return count == 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-
-        return result;
-
     }
 
-
     public boolean checkId(String userid) {
-        boolean result = false;
-        //query호출
-        int cnt = 0;
-        //1 param : 어떤 쿼리를 호출할지
-        //2 param : 쿼리 실행시 필요한 파라미터 값
-        cnt = sqlSession.selectOne("User.checkId", userid);
-        if (cnt >= 1) {
-            result = true;
+        try (SqlSession sqlSession = factory.openSession()) {
+            int count = sqlSession.selectOne("User.checkId", userid);
+            return count >= 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-
-        return result;
     }
 
     public boolean checkPW(String userpw) {
-        boolean result = false;
-        //query호출
-        int cnt = 0;
-        //1 param : 어떤 쿼리를 호출할지
-        //2 param : 쿼리 실행시 필요한 파라미터 값
-        cnt = sqlSession.selectOne("User.checkPW", userpw);
-        if (cnt >= 1) {
-            result = true;
+        try (SqlSession sqlSession = factory.openSession()) {
+            int count = sqlSession.selectOne("User.checkPW", userpw);
+            return count >= 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-
-        return result;
     }
-    //logout
+}
+//logout
 //	public boolean logout(String userid) {
 //		boolean result = false;
 //		int rowsAffected = sqlSession.delete("User.logout", userid);
@@ -81,4 +82,3 @@ public class UserDAO {
 //		return result;
 //	}
 //	
-}

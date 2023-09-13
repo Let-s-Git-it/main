@@ -71,10 +71,11 @@
 </head>
 
 <body>
-<c:if test="${sessionID != null }">
+
+<c:if test="${sessionScope.userid != null }">
     <script>
       alert("이미 로그인 중입니다.");
-      location.href = "home.do";
+      location.href = "${pageContext.request.contextPath}/base/index.jsp";
     </script>
 </c:if>
 
@@ -91,15 +92,17 @@
     <form action="${pageContext.request.contextPath}/user/UserLoginOk.us" method="post" name="userlogin">
         <input type="text" placeholder="아이디" name="userid" required style="height:30px; width: 380px"/><br/>
         <input type="password" placeholder="비밀번호" name="userpw" required style="height:30px; width: 380px"/><br/>
-        <input type="submit" value="로그인" class="login" onclick="return logincheck(userlogin.userid.value,userlogin.userpw.value);"/>
+        <input type="submit" value="로그인" class="login"
+               onclick="return logincheck(userlogin.userid.value,userlogin.userpw.value);"/>
         <button onclick="location.href='${pageContext.request.contextPath}/base/index.jsp'" class="login">HOME</button>
     </form>
+
     <hr/>
     <p id="loginError" style="color: red;">
             <% if (request.getAttribute("loginError") != null) { %>
             <%= request.getAttribute("loginError") %>
             <% } %>
-    <p> </p>
+    <p></p>
 
     <script src="user.js"></script>
 </div>
