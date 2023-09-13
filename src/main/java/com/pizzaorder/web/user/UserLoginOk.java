@@ -15,8 +15,6 @@ public class UserLoginOk implements Action {
         UserDAO udao = new UserDAO();
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
-    /*    System.out.println("userid: " + userid);
-        System.out.println("userpw: " + userpw);*/
 
         if (udao.logincheck(userid, userpw)) {
             forward.setPath("/base/index.jsp");
@@ -25,7 +23,7 @@ public class UserLoginOk implements Action {
             forward.setPath("/login/loginview.jsp");
         }
 
-        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
+//        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
 
         return forward;
 
