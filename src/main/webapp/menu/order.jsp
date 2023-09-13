@@ -189,15 +189,11 @@
                                         <p>바다와 육지의 대왕이 하나로</p>
                                         <div class="size-control">
                                             <label class="genric-btn danger circle">
-                                                <input type="radio" name="main_menu3" data-size="l"
-                                                       onclick="updatePrice('main_menu3', 'l')">
                                                 <input type="radio" name="main_menu3"
                                                        onclick="updatePrice('main_menu3', 'l')">
                                                 L (￦<span id=main_menu3_price_l>30,000</span>)
                                             </label>
                                             <label class="genric-btn danger circle">
-                                                <input type="radio" name="main_menu3" data-size="xl"
-                                                       onclick="updatePrice('main_menu3', 'xl')">
                                                 <input type="radio" name="main_menu3"
                                                        onclick="updatePrice('main_menu3', 'xl')">
                                                 XL (￦<span id=main_menu3_price_xl>33,000</span>)
@@ -230,15 +226,11 @@
                                                 <input type="radio" name="main_menu4" data-size="l"
                                                        onclick="updatePrice('main_menu4', 'l')">
                                                 L (￦<span id=main_menu4_price_l>18,500</span>)
-                                                <input type="radio" name="main_menu4" id="size_l"
-                                                       onchange="updatePrice(this.name, 'l')"> L (￦18,500)
                                             </label>
                                             <label class="genric-btn danger circle">
                                                 <input type="radio" name="main_menu4" data-size="xl"
                                                        onclick="updatePrice('main_menu4', 'xl')">
                                                 XL (￦<span id=main_menu4_price_xl>21,500</span>)
-                                                <input type="radio" name="main_menu4" id="size_xl"
-                                                       onchange="updatePrice(this.name, 'xl')"> XL (￦21,500)
                                             </label>
                                         </div>
                                         <h5>￦<span id="main_menu4_price">0</span></h5>
@@ -266,15 +258,11 @@
                                                 <input type="radio" name="main_menu5" data-size="l"
                                                        onclick="updatePrice('main_menu5', 'l')">
                                                 L (￦<span id=main_menu5_price_l>20,500</span>)
-                                                <input type="radio" name="main_menu5" id="size_l"
-                                                       onchange="updatePrice(this.name, 'l')"> L (￦20,500)
                                             </label>
                                             <label class="genric-btn danger circle">
                                                 <input type="radio" name="main_menu5" data-size="xl"
                                                        onclick="updatePrice('main_menu5', 'xl')">
                                                 XL (￦<span id=main_menu5_price_xl>23,500</span>)
-                                                <input type="radio" name="main_menu5" id="size_xl"
-                                                       onchange="updatePrice(this.name, 'xl')"> XL (￦23,500)
                                             </label>
                                         </div>
                                         <h5>￦<span id="main_menu5_price">0</span></h5>
