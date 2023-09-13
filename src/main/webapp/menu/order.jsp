@@ -189,11 +189,15 @@
                                         <p>바다와 육지의 대왕이 하나로</p>
                                         <div class="size-control">
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu3" data-size="l"
+                                                       onclick="updatePrice('main_menu3', 'l')">
                                                 <input type="radio" name="main_menu3"
                                                        onclick="updatePrice('main_menu3', 'l')">
                                                 L (￦<span id=main_menu3_price_l>30,000</span>)
                                             </label>
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu3" data-size="xl"
+                                                       onclick="updatePrice('main_menu3', 'xl')">
                                                 <input type="radio" name="main_menu3"
                                                        onclick="updatePrice('main_menu3', 'xl')">
                                                 XL (￦<span id=main_menu3_price_xl>33,000</span>)
@@ -223,10 +227,16 @@
                                         <p>짭짤한 풍미의 페퍼로니, 파마산+로마노 치즈가 토핑</p>
                                         <div class="size-control">
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu4" data-size="l"
+                                                       onclick="updatePrice('main_menu4', 'l')">
+                                                L (￦<span id=main_menu4_price_l>18,500</span>)
                                                 <input type="radio" name="main_menu4" id="size_l"
                                                        onchange="updatePrice(this.name, 'l')"> L (￦18,500)
                                             </label>
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu4" data-size="xl"
+                                                       onclick="updatePrice('main_menu4', 'xl')">
+                                                XL (￦<span id=main_menu4_price_xl>21,500</span>)
                                                 <input type="radio" name="main_menu4" id="size_xl"
                                                        onchange="updatePrice(this.name, 'xl')"> XL (￦21,500)
                                             </label>
@@ -253,10 +263,16 @@
                                         <p>신선한 감자와 고소한 치즈의 환상 조합</p>
                                         <div class="size-control">
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu5" data-size="l"
+                                                       onclick="updatePrice('main_menu5', 'l')">
+                                                L (￦<span id=main_menu5_price_l>20,500</span>)
                                                 <input type="radio" name="main_menu5" id="size_l"
                                                        onchange="updatePrice(this.name, 'l')"> L (￦20,500)
                                             </label>
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu5" data-size="xl"
+                                                       onclick="updatePrice('main_menu5', 'xl')">
+                                                XL (￦<span id=main_menu5_price_xl>23,500</span>)
                                                 <input type="radio" name="main_menu5" id="size_xl"
                                                        onchange="updatePrice(this.name, 'xl')"> XL (￦23,500)
                                             </label>
@@ -283,10 +299,16 @@
                                         <p>카우보이들이 즐겨 먹던 정통 그릴드 비프 스테이크의 재현</p>
                                         <div class="size-control">
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu6" data-size="l"
+                                                       onclick="updatePrice('main_menu6', 'l')">
+                                                L (￦<span id=main_menu6_price_l>28,000</span>)
                                                 <input type="radio" name="main_menu6" id="size_l"
                                                        onchange="updatePrice(this.name, 'l')"> L (￦28,000)
                                             </label>
                                             <label class="genric-btn danger circle">
+                                                <input type="radio" name="main_menu6" data-size="xl"
+                                                       onclick="updatePrice('main_menu6', 'l')">
+                                                XL (￦<span id=main_menu6_price_xl>31,000</span>)
                                                 <input type="radio" name="main_menu6" id="size_xl"
                                                        onchange="updatePrice(this.name, 'xl')"> XL (￦31,000)
                                             </label>
