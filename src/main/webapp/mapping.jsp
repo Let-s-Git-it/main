@@ -74,7 +74,7 @@
                         </ul>
                     </div>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid }">
+                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
                     		<div class="menu_btn" id="loginBtn" >
                         		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
                     		</div>
@@ -86,7 +86,7 @@
                    	 	</c:otherwise>
                     </c:choose>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid }">
+                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
                     		<div class="menu_btn" id="signupBtn" test="${session.user }">
                         		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
                            		class="btn_1 d-none d-sm-block">로그인</a>
