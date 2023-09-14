@@ -1,5 +1,7 @@
 <!-- login.jsp -->
-
+<%@ page import="java.net.URLEncoder"%>
+<%@ page import="java.security.SecureRandom"%>
+<%@ page import="java.math.BigInteger"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -104,9 +106,44 @@
             <%= request.getAttribute("loginError") %>
             <% } %>
     <p></p>
+<title>네이버로그인</title>
+		<%
+		String clientId = "pAHkT6H3O_d4GE5RRMnJ";//애플리케이션 클라이언트 아이디값";
+		String redirectURI = URLEncoder.encode("http://www.naver.com", "UTF-8");
+		SecureRandom random = new SecureRandom();
+		String state = new BigInteger(130, random).toString();
+		String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code" + "&client_id=" + clientId
+				+ "&redirect_uri=" + redirectURI + "&state=" + state;
+		session.setAttribute("state", state);
+		%>
 
-<!--     <script src="user.js"></script> -->
-</div>
+		<!-- kakao id  -->
+		<a href="<%=apiURL%>"><img height="50"
+			src="http://static.nid.naver.com/oauth/small_g_in.PNG" /></a> <a
+			id="custom-login-btn" onClick="loginWithKakao()"> <img
+			src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+			width="242" /></a>
+
+		<p id="token-result"></p>
+
+
+		<p id="welcomemsg" style="color: red;">
+			<%
+			if (request.getAttribute("welcomemsg") != null) {
+			%>
+			<%=request.getAttribute("welcomemsg")%>
+			<%
+			}
+			%>
+
+			<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
+				integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
+				crossorigin="anonymous"></script>
+			<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+			<script src="kakao.js"></script>
+
+	</div>
+
 
 </body>
 </html>
