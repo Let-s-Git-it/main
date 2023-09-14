@@ -90,15 +90,18 @@
                         		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
                            		class="btn_1 d-none d-sm-block">로그인</a>
                     		</div>
+                    		<div class="menu_btn" id="orderBtn" test="${session.user }">
+                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
+                    		</div>	
                     	</c:when>
                     	<c:otherwise>
-                    		<div class="menu_btn" id="orderBtn">
-                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>
                     		<div class="menu_btn" id="orderCheckbtn">
                         		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
                     		</div>
-                    	</c:otherwise>	
+                    		<div class="menu_btn" id="orderBtn">
+                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
+                    		</div>
+                    	</c:otherwise>
                     </c:choose>
                 </nav>
             </div>
