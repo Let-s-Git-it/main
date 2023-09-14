@@ -35,7 +35,7 @@ public class UserjoinAction implements Action{
 		}else {
 			System.out.println(">>>>>>>>>>>>> joinActionforward : " + forward);
 			//회원가입 실패
-			forward.setPath("/index.jsp");
+			forward.setPath("/base/index.jsp");
 		}
 		return forward;
 	}

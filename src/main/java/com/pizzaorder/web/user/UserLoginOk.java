@@ -42,10 +42,10 @@ public class UserLoginOk implements Action {
         UserDAO udao = new UserDAO();
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
+        HttpSession session = request.getSession();
 
         // 사용자 로그인 확인
         if (udao.logincheck(userid, userpw)) {
-            HttpSession session = request.getSession(true);
 
             session.setAttribute("userid", userid);
 
