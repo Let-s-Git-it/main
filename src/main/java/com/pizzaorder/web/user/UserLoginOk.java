@@ -8,31 +8,6 @@ import com.pizzaorder.web.user.action.Action;
 import com.pizzaorder.web.user.action.ActionForward;
 import com.pizzaorder.web.user.dao.UserDAO;
 
-/*
-public class UserLoginOk implements Action {
-    @Override
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-
-        ActionForward forward = new ActionForward();
-        UserDAO udao = new UserDAO();
-        String userid = request.getParameter("userid");
-        String userpw = request.getParameter("userpw");
-
-        if (udao.logincheck(userid, userpw)) {
-            forward.setPath("/base/index.jsp");
-        } else {
-            request.setAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
-            forward.setPath("/login/loginview.jsp");
-        }
-
-//        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
-
-        return forward;
-
-
-    }
-}
-*/
 
 public class UserLoginOk implements Action {
     @Override
@@ -42,6 +17,7 @@ public class UserLoginOk implements Action {
         UserDAO udao = new UserDAO();
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
+        String kakaoUserId = request.getParameter("kakaoUserId");
         HttpSession session = request.getSession();
 
         // 사용자 로그인 확인
@@ -56,6 +32,15 @@ public class UserLoginOk implements Action {
             request.setAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
             forward.setPath("/login/loginview.jsp");
         }
+        
+        if (kakaoUserId != null) {
+			session.setAttribute("kakaoid", kakaoUserId);
+			forward.setPath("/base/index.jsp");
+		}else {
+			// 로그인 실패 시 에러 메시지 설정
+			request.setAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
+			forward.setPath("/login/loginview.jsp");
+		}
 //        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
         return forward;
     }
