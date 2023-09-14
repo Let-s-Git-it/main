@@ -1,6 +1,8 @@
 <%@ page import="com.pizzaorder.web.user.dao.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 
 <!doctype html>
@@ -70,34 +72,34 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu_btn" id="loginBtn">
-                        <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                    </div>
-                    <div class="menu_btn" id="signupBtn">
-                        <a href="${pageContext.request.contextPath}/login/loginview.jsp"
-                           class="btn_1 d-none d-sm-block">로그인</a>
-                    </div>
-                    <div class="menu_btn" id="logoutBtn" style="display: none;">
-                        <a href="#" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    </div>
-                    <script>
-                      // 로그인 상태를 확인하는 변수 (가정)
-                      var isLoggedIn = true; // 또는 false
-
-                      // 페이지 로드 시 실행되는 함수
-                      window.onload = function () {
-                        // 로그인 상태에 따라 버튼 표시/숨김 처리
-                        if (isLoggedIn) {
-                          document.getElementById("loginBtn").style.display = "none";
-                          document.getElementById("signupBtn").style.display = "none";
-                          document.getElementById("logoutBtn").style.display = "block";
-                        } else {
-                          document.getElementById("loginBtn").style.display = "block";
-                          document.getElementById("signupBtn").style.display = "block";
-                          document.getElementById("logoutBtn").style.display = "none";
-                        }
-                      };
-                    </script>
+                    <c:choose>
+                    	<c:when test="${empty sessionScope.userid }">
+                    		<div class="menu_btn" id="loginBtn" >
+                        		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
+                    		</div>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<div class="menu_btn" id="logoutBtn">
+                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
+                    		</div>
+                   	 	</c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                    	<c:when test="${empty sessionScope.userid }">
+                    		<div class="menu_btn" id="signupBtn" test="${session.user }">
+                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                           		class="btn_1 d-none d-sm-block">로그인</a>
+                    		</div>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<div class="menu_btn" id="orderBtn">
+                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
+                    		</div>
+                    		<div class="menu_btn" id="orderCheckbtn">
+                        		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
+                    		</div>
+                    	</c:otherwise>	
+                    </c:choose>
                 </nav>
             </div>
         </div>

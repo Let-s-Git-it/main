@@ -72,10 +72,11 @@
                         <a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
                     </div>
 
-                    <div class="menu_btn">
+                    <!-- <div class="menu_btn">
                         <a id="loginButton" href="${pageContext.request.contextPath}/login/loginview.jsp"
                            class="btn_1 d-none d-sm-block">로그인</a>
-                    </div>
+                    </div> -->
+                    
                     <div class="menu_btn">
                         <a href="${pageContext.request.contextPath}/menu/order.jsp"
                            class="btn_1 d-none d-sm-block">주문하기</a>
