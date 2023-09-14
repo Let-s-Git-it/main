@@ -104,7 +104,7 @@
             <% } %>
     <p></p>
 
-    <script src="user.js"></script>
+<!--     <script src="user.js"></script> -->
 </div>
 
 </body>
