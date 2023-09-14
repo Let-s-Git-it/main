@@ -80,8 +80,13 @@
                     	</c:when>
                     	<c:otherwise>
                     		<div class="menu_btn" id="logoutBtn">
-                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    		</div>
+                              <a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block" onclick = "confirmLogout()">로그아웃</a>
+                          </div>
+                          <script>
+                          function confirmLogout() {
+                               var confirmLogout = confirm("로그아웃 하시겠습니까?");
+                          }
+                          </script>
                    	 	</c:otherwise>
                     </c:choose>
                     <c:choose>
@@ -138,7 +143,12 @@
     </div>
 </section>
 <!-- banner part start-->
-
+<script>
+    <c:if test="${not empty sessionScope.userid }">
+        var welcomeMessage = "${sessionScope.userid} 님 환영합니다!";
+        alert(welcomeMessage);
+    </c:if>
+</script>
 <!-- jquery plugins here-->
 <!-- jquery -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>
