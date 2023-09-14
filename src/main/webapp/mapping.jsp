@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}css/all.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}css/addstyle.css">
 </head>
 
 <body>
@@ -54,21 +55,21 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">홈</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
+                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">메뉴</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">소개</a>
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
                                    href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
                             </li>
                         </ul>
                     </div>
@@ -117,7 +118,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb_iner text-center">
                     <div class="breadcrumb_iner_item">
-                        <h2>주변 매장 찾기</h2>
+                        <h2>오시는 길</h2>
                     </div>
                 </div>
             </div>
@@ -129,95 +130,82 @@
 <!-- ================ contact section start ================= -->
 <section class="contact-section section_padding">
     <div class="container">
-        <div class="d-none d-sm-block mb-5 pb-4">
-            <div id="map" style="height: 480px;"></div>
-            <script>
-              function initMap () {
-                var uluru = {
-                  lat: -25.363,
-                  lng: 131.044
-                };
-                var grayStyles = [{
-                  featureType: "all",
-                  stylers: [{
-                    saturation: -90
-                  },
-                    {
-                      lightness: 50
-                    }
-                  ]
-                },
-                  {
-                    elementType: 'labels.text.fill',
-                    stylers: [{
-                      color: '#ccdee9'
-                    }]
-                  }
-                ];
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  center: {
-                    lat: -31.197,
-                    lng: 150.744
-                  },
-                  zoom: 9,
-                  styles: grayStyles,
-                  scrollwheel: false
-                });
-              }
-            </script>
-            <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnd-3fKD3zOt7a3K6bjB0-y3WduVY190E&callback=initMap">
-            </script>
-            <script>
-              var map;
-              var infoWindow;
-
-              function initMap () {
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: { lat: 0, lng: 0 }, // 초기 맵 중심 위치를 설정하세요.
-                  zoom: 15 // 줌 레벨을 원하는 값으로 설정하세요.
-                });
-
-                infoWindow = new google.maps.InfoWindow;
-
-                // 현재 위치 가져오기
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(function (position) {
-                    var pos = {
-                      lat: position.coords.latitude,
-                      lng: position.coords.longitude
-                    };
-
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('현재 위치');
-                    infoWindow.open(map);
-                    map.setCenter(pos);
-                  }, function () {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                  });
-                } else {
-                  // 브라우저가 Geolocation을 지원하지 않는 경우
-                  handleLocationError(false, infoWindow, map.getCenter());
-                }
-              }
-
-              function handleLocationError (browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                  '오류: 위치 정보를 가져올 수 없습니다.' :
-                  '오류: 브라우저가 Geolocation을 지원하지 않습니다.');
-                infoWindow.open(map);
-              }
-
-              // initMap 함수를 호출하여 지도를 초기화합니다.
-              initMap();
-            </script>
-
+    	<div id="location">
+			<div style="white-space: nowrap;">HOME &gt; <h3 style="display: inline; margin: 0;"><strong>오시는 길</strong></h3></div>
         </div>
-    </div>
+			<div class="d-none d-sm-block mb-5 pb-4">
+				<div id="mapCon">
+					<!-- KIC 캠퍼스 지도 설정 -->
+					<div id="daumRoughmapContainer1531128316081"
+						class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+					<script charset="UTF-8" class="daum_roughmap_loader_script"
+						src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1531128316081",
+							"key" : "oy7i",
+							"mapWidth" : "1200",
+							"mapHeight" : "500"
+						}).render();
+					</script>
+				</div>
+			</div>
+			<div class="map-tbl-con">
+				<ul class="location-list">
+					<li>
+						<dl>
+							<dt class="location-list-tit">
+								<span><img src="${pageContext.request.contextPath}/img/icon/placeholder.png" class="material-icons">주소 및 연락처</span> <a
+									href="https://booking.naver.com/booking/6/bizes/666766/items/4337067?area=bbt"
+									target="_blank"><img
+									src="https://www.kiccampus.com/kr/images/common/naver_booking.png"
+									alt="네이버예약"></a>
+							</dt>
+							<dd>
+								서울특별시 강남구 역삼동 819-10 세경빌딩 3층<br>Tel : 02.538.3644
+								<p class="location-tel">
+									<span></span>
+								</p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="location-list-tit">
+								<span><img src="${pageContext.request.contextPath}/img/icon/bus.png" class="material-icons">버스 이용시</span>
+							</dt>
+							<dd>
+								<span class="bus-info"><em style="background-color: #2669b0;">간선</em>140, 144, 145, 146, 340, 341, 360, 402, 470, 471, 730</span><br/>
+								<span class="bus-info"><em style="background-color: #67b916;">지선</em>3412, 3420, 4312, 4422, 4431, 5412</span><br/>
+								<span class="bus-info"><em style="background-color: #cb0000;">광역</em>1550, 9100, 9200, 9400, 9404, 9408, 9409, 9411, 9503, 9700, 9711</span><br/>
+								<span class="bus-info"><em style="background-color: #fcb106;">경기</em>1005-1, 105-2, 1005-5, 1550-1, 1560, 2002, 2002-1, 3030, 5001, 5001-1, 5002, 5003, 5100, 5500-2, 6800, 9500, 9801, 9900</span><br/> 
+								<span class="bus-info"><em style="background-color: #575757;">마을</em>서초03, 서초09, 서초10, 서초11, 서초20</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="location-list-tit">
+								<span><img src="${pageContext.request.contextPath}/img/icon/subway.png" class="material-icons">지하철 이용시</span>
+							</dt>
+							<dd>
+								<span class="train-info"><em style="background-color: #3cb44a;">2호선</em>강남역 - 11번, 12번 출구 </span><br/> 
+								<span class="train-info"><em style="background-color: #e53354;">신분당선</em>강남역 - 2번 출구 </span><br/>
+								<span class="train-info"><em style="background-color: #cbb939;">9호선</em>신논현역 - 4번, 5번 출구 </span><br/>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
 </section>
+
 <!-- ================ contact section end ================= -->
 
+	
 <!-- footer part start-->
 <footer class="footer-area">
     <div class="container">
