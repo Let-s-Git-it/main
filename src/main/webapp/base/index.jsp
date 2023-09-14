@@ -55,20 +55,20 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">홈</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/menu/food_menu.jsp">메뉴</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">소개</a>
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
                                    href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
                             </li>
                         </ul>
                     </div>
@@ -80,8 +80,13 @@
                     	</c:when>
                     	<c:otherwise>
                     		<div class="menu_btn" id="logoutBtn">
-                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    		</div>
+                              <a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block" onclick = "confirmLogout()">로그아웃</a>
+                          </div>
+                          <script>
+                          function confirmLogout() {
+                               var confirmLogout = confirm("로그아웃 하시겠습니까?");
+                          }
+                          </script>
                    	 	</c:otherwise>
                     </c:choose>
                     <c:choose>
@@ -117,9 +122,9 @@
             <div class="col-lg-6">
                 <div class="banner_text">
                     <div class="banner_text_iner">
-                        <h5>Lets Git it</h5>
+                        <h5>Lets Git-it</h5>
                         <h2>Pizza Order</h2>
-                        <p>맛있는 피자~♪ 우리 피자 배달 공짜♪<br>
+                        <p>맛있는 피자~♪ 게살 피자 배달 공짜♪<br>
                             게살 피자 ㅂ풔풔풔풔풔풮풮 피자 맛있는 피자 게살 피자 둥궁딱 둥궁둥궁둥국딱 피자<br>
                             둥궁둥궁둥궁딱 피자 맛있는 ㅇ예예옝예예 피자~~ 게살~~ 피자~~~♪</p>
                         <div class="banner_btn">
@@ -129,7 +134,7 @@
                             </div>
                             <a href="https://www.youtube.com/watch?v=EvPMHHjYzj0" class="popup-youtube video_popup">
                                 <span><img src="${pageContext.request.contextPath}/img/icon/play.svg" alt=""></span>
-                                Watch our story</a>
+                                Watch our identity</a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +143,12 @@
     </div>
 </section>
 <!-- banner part start-->
-
+<script>
+    <c:if test="${not empty sessionScope.userid }">
+        var welcomeMessage = "${sessionScope.userid} 님 환영합니다!";
+        alert(welcomeMessage);
+    </c:if>
+</script>
 <!-- jquery plugins here-->
 <!-- jquery -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>

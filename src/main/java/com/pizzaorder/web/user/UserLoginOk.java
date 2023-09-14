@@ -48,6 +48,8 @@ public class UserLoginOk implements Action {
         if (udao.logincheck(userid, userpw)) {
 
             session.setAttribute("userid", userid);
+            String welcomeMessage = "userid 님 환영합니다!";
+            request.setAttribute("welcomeMessage", welcomeMessage);
 
             // 로그인 성공 시 홈 페이지로 이동
             forward.setPath("/base/index.jsp");
