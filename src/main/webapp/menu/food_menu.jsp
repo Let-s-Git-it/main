@@ -446,6 +446,6 @@
 <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
 <!-- custom js -->
 <script src="${pageContext.request.contextPath}/js/custom.js"></script>
-<script src="login.js"></script>
+<script src="${pageContext.request.contextPath}/login/login.js"></script>
 </body>
 </html>
