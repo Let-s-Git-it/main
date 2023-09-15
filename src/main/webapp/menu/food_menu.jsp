@@ -191,7 +191,7 @@
 										<div class="media-body align-self-center">
 											<h3>불고기</h3>
 											<p>프리미엄 불고기 토핑이 듬뿍</p>
-											<h5>￦22,500</h5>
+											<h5>L(￦22,500) XL(￦25,500)</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -203,7 +203,7 @@
 										<div class="media-body align-self-center">
 											<h3>콰트로</h3>
 											<p>4가지 피자를 한 판에</p>
-											<h5>￦29,500</h5>
+											<h5>L(￦29,500) XL(￦32,500)</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -215,7 +215,7 @@
 										<div class="media-body align-self-center">
 											<h3>씨푸드</h3>
 											<p>바다와 육지의 대왕이 하나로</p>
-											<h5>￦30,000</h5>
+											<h5>L(￦30,000) XL(￦33,000)</h5>
 										</div>
 									</div>
 								</div>
@@ -229,7 +229,7 @@
 										<div class="media-body align-self-center">
 											<h3>페퍼로니</h3>
 											<p>짭짤한 풍미의 페퍼로니, 파마산+로마노 치즈가 토핑</p>
-											<h5>￦18,500</h5>
+											<h5>L(￦18,500) XL(￦21,000)</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -241,7 +241,7 @@
 										<div class="media-body align-self-center">
 											<h3>포테이토</h3>
 											<p>신선한 감자와 고소한 치즈의 환상 조합</p>
-											<h5>￦20,500</h5>
+											<h5>L(￦20,500) XL(￦23,500)</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -253,7 +253,7 @@
 										<div class="media-body align-self-center">
 											<h3>스테이크</h3>
 											<p>카우보이들이 즐겨 먹던 정통 그릴드 비프 스테이크의 재현</p>
-											<h5>￦28,000</h5>
+											<h5>L(￦28,000) XL(￦31,000)</h5>
 										</div>
 									</div>
 								</div>
@@ -340,7 +340,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>콜라</h3>
-											<h5>1.25L ￦2300</h5>
+											<h5>1.25L ￦2,300</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -351,7 +351,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>제로 콜라</h3>
-											<h5>1.25L ￦2300</h5>
+											<h5>1.25L ￦2,300</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -362,7 +362,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>스프라이트</h3>
-											<h5>1.5L ￦2400</h5>
+											<h5>1.5L ￦2,400</h5>
 										</div>
 									</div>
 								</div>
@@ -375,7 +375,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>콜라</h3>
-											<h5>500ml ￦1700</h5>
+											<h5>500ml ￦1,700</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -386,7 +386,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>제로 콜라</h3>
-											<h5>500ml ￦1700</h5>
+											<h5>500ml ￦1,700</h5>
 										</div>
 									</div>
 									<div class="single_food_item media">
@@ -397,7 +397,7 @@
 										</a>
 										<div class="media-body align-self-center">
 											<h3>스프라이트</h3>
-											<h5>500ml ￦1700</h5>
+											<h5>500ml ￦1,700</h5>
 										</div>
 									</div>
 								</div>
@@ -514,6 +514,5 @@
 		src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
 	<!-- custom js -->
 	<script src="${pageContext.request.contextPath}/js/custom.js"></script>
-	<script src="${pageContext.request.contextPath}/login/login.js"></script>
 </body>
 </html>

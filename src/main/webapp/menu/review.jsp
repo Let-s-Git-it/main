@@ -83,21 +83,21 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">홈</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
+                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">메뉴</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">소개</a>
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
                                    href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
                             </li>
                         </ul>
                     </div>
@@ -146,7 +146,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb_iner text-center">
                     <div class="breadcrumb_iner_item">
-                        <h2>Blog Single</h2>
+                        <h2>메뉴 리뷰</h2>
                     </div>
                 </div>
             </div>
@@ -277,9 +277,10 @@
                     <div class="media align-items-center">
                         <img src="${pageContext.request.contextPath}/img/blog/author.png" alt="">
                         <div class="media-body">
+                            <h4>
                             <a href="#">
-                                <h4>Harvard milan</h4>
-                            </a>
+                                Harvard milan
+                            </a></h4>
                             <p>Second divided from form fish beast made. Every of seas all gathered use saying you're,
                                 he
                                 our dominion twon Second divided from</p>
@@ -406,21 +407,6 @@
             </div>
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
-                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                                    <div class="input-group-append">
-                                        <button class="btn" type="button"><i class="ti-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="button rounded-0 primary-bg text-white w-100 btn_4" type="submit">Search
-                            </button>
-                        </form>
-                    </aside>
                     <aside class="single_sidebar_widget post_category_widget">
                         <h4 class="widget_title">Category</h4>
                         <ul class="list cat-list">
@@ -500,88 +486,6 @@
                                 <p>01 Hours ago</p>
                             </div>
                         </div>
-                    </aside>
-                    <aside class="single_sidebar_widget tag_cloud_widget">
-                        <h4 class="widget_title">Tag Clouds</h4>
-                        <ul class="list">
-                            <li>
-                                <a href="#">project</a>
-                            </li>
-                            <li>
-                                <a href="#">love</a>
-                            </li>
-                            <li>
-                                <a href="#">technology</a>
-                            </li>
-                            <li>
-                                <a href="#">travel</a>
-                            </li>
-                            <li>
-                                <a href="#">restaurant</a>
-                            </li>
-                            <li>
-                                <a href="#">life style</a>
-                            </li>
-                            <li>
-                                <a href="#">design</a>
-                            </li>
-                            <li>
-                                <a href="#">illustration</a>
-                            </li>
-                        </ul>
-                    </aside>
-                    <aside class="single_sidebar_widget instagram_feeds">
-                        <h4 class="widget_title">Instagram Feeds</h4>
-                        <ul class="instagram_row flex-wrap">
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_5.png"
-                                         alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_6.png"
-                                         alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_7.png"
-                                         alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_8.png"
-                                         alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_9.png"
-                                         alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="${pageContext.request.contextPath}/img/post/post_10.png"
-                                         alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
-                    <aside class="single_sidebar_widget newsletter_widget">
-                        <h4 class="widget_title">Newsletter</h4>
-                        <form action="#">
-                            <div class="form-group">
-                                <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                       onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                            </div>
-                            <button class="button rounded-0 primary-bg text-white w-100 btn_4"
-                                    type="submit">Subscribe
-                            </button>
-                        </form>
                     </aside>
                 </div>
             </div>
