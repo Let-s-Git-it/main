@@ -16,17 +16,6 @@ public class UserDAO {
         sqlSession = factory.openSession(true);
     }
 
-    //회원가입
-/*    public boolean join(UserDTO user) {
-        boolean result = false;
-        //1 param : 어떤 쿼리를 호출할지
-        //2 param : 쿼리 실행시 필요한 파라미터 값
-        if (sqlSession.insert("User.join", user) != 0) {
-            result = true;
-        }
-
-        return result;
-    }*/
     public boolean join(UserDTO user) {
         try (SqlSession sqlSession = factory.openSession(true)) {
             int rowsInserted = sqlSession.insert("User.join", user);
@@ -71,14 +60,3 @@ public class UserDAO {
         }
     }
 }
-//logout
-//	public boolean logout(String userid) {
-//		boolean result = false;
-//		int rowsAffected = sqlSession.delete("User.logout", userid);
-//		
-//		if(rowsAffected == 1) {
-//			result = true;
-//		}
-//		return result;
-//	}
-//	
