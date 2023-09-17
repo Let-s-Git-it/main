@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!doctype html>
 <html lang="en">
@@ -72,35 +72,40 @@
                         </ul>
                     </div>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="loginBtn" >
-                        		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                    		</div>
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="logoutBtn">
-                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    		</div>
-                   	 	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
+                            <div class="menu_btn" id="loginBtn">
+                                <a href="${pageContext.request.contextPath}/join/joinview.jsp"
+                                   class="btn_1 d-none d-sm-block">회원가입</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="logoutBtn">
+                                <a href="${pageContext.request.contextPath}/user/Logoutok.us"
+                                   class="btn_1 d-none d-sm-block">로그아웃</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
                     <c:choose>
-                    	<c:when test="$${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="signupBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
-                           		class="btn_1 d-none d-sm-block">로그인</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>	
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="orderCheckbtn">
-                        		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn">
-                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>
-                    	</c:otherwise>
+                        <c:when test="$${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
+                            <div class="menu_btn" id="signupBtn" test="${session.user }">
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                   class="btn_1 d-none d-sm-block">로그인</a>
+                            </div>
+                            <div class="menu_btn" id="orderBtn" test="${session.user }">
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderCheckbtn">
+                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                   class="btn_1 d-none d-sm-block">주문내역</a>
+                            </div>
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
                 </nav>
             </div>
@@ -168,11 +173,11 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu1')">-
+                                                        onclick="updateMenuItemQuantity('main_menu1', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu1_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu1')">+
+                                                        onclick="updateMenuItemQuantity('main_menu1', 'increase')">+
                                                 </button>
                                             </div>
                                         </div>
@@ -188,7 +193,7 @@
                                             <label class="genric-btn danger circle">
                                                 <input type="radio" name="main_menu2" data-size="l"
                                                        onclick="updatePrice('main_menu2', 'l')">
-                                               L (￦<span id=main_menu2_price_l>29,500</span>)
+                                                L (￦<span id=main_menu2_price_l>29,500</span>)
                                             </label>
                                             <label class="genric-btn danger circle">
                                                 <input type="radio" name="main_menu2" data-size="xl"
@@ -200,11 +205,11 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu2')">-
+                                                        onclick="updateMenuItemQuantity('main_menu2', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu2_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu2')">+
+                                                        onclick="updateMenuItemQuantity('main_menu2', 'increase')">+
                                                 </button>
                                             </div>
                                         </div>
@@ -232,12 +237,13 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu3')">-
+                                                        onclick="updateMenuItemQuantity('main_menu3', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu3_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu3')">+
+                                                        onclick="updateMenuItemQuantity('main_menu3', 'increase')">+
                                                 </button>
+
                                             </div>
                                         </div>
                                     </div>
@@ -266,11 +272,11 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu4')">-
+                                                        onclick="updateMenuItemQuantity('main_menu4', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu4_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu4')">+
+                                                        onclick="updateMenuItemQuantity('main_menu4', 'increase')">+
                                                 </button>
                                             </div>
                                         </div>
@@ -298,11 +304,11 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu5')">-
+                                                        onclick="updateMenuItemQuantity('main_menu5', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu5_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu5')">+
+                                                        onclick="updateMenuItemQuantity('main_menu5', 'increase')">+
                                                 </button>
                                             </div>
                                         </div>
@@ -330,11 +336,11 @@
                                         <div class="product">
                                             <div class="quantity-control">
                                                 <button class="quantity-button"
-                                                        onclick="decreaseQuantity('main_menu6')">-
+                                                        onclick="updateMenuItemQuantity('main_menu6', 'decrease')">-
                                                 </button>
                                                 <span id="main_menu6_quantity">0</span>
                                                 <button class="quantity-button"
-                                                        onclick="increaseQuantity('main_menu6')">+
+                                                        onclick="updateMenuItemQuantity('main_menu6', 'increase')">+
                                                 </button>
                                             </div>
                                         </div>
@@ -361,10 +367,12 @@
                                     <h5>￦<span id="side_menu1_price">6,900</span></h5>
                                     <div class="product">
                                         <div class="quantity-control">
-                                            <button class="quantity-button" onclick="decreaseQuantity('side_menu1')">-
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu1', 'decrease')">-
                                             </button>
                                             <span id="side_menu1_quantity">0</span>
-                                            <button class="quantity-button" onclick="increaseQuantity('side_menu1')">+
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu1', 'increase')">+
                                             </button>
                                         </div>
                                     </div>
@@ -379,10 +387,12 @@
                                     <h5>￦<span id="side_menu2_price">9,800</span></h5>
                                     <div class="product">
                                         <div class="quantity-control">
-                                            <button class="quantity-button" onclick="decreaseQuantity('side_menu2')">-
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu2', 'decrease')">-
                                             </button>
                                             <span id="side_menu2_quantity">0</span>
-                                            <button class="quantity-button" onclick="increaseQuantity('side_menu2')">+
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu2', 'increase')">+
                                             </button>
                                         </div>
                                     </div>
@@ -397,10 +407,12 @@
                                     <h5>￦<span id="side_menu3_price">9,800</span></h5>
                                     <div class="product">
                                         <div class="quantity-control">
-                                            <button class="quantity-button" onclick="decreaseQuantity('side_menu3')">-
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu3', 'decrease')">-
                                             </button>
                                             <span id="side_menu3_quantity">0</span>
-                                            <button class="quantity-button" onclick="increaseQuantity('side_menu3')">+
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu3', 'increase')">+
                                             </button>
                                         </div>
                                     </div>
@@ -417,10 +429,12 @@
                                     <h5>￦<span id="side_menu4_price">9,800</span></h5>
                                     <div class="product">
                                         <div class="quantity-control">
-                                            <button class="quantity-button" onclick="decreaseQuantity('side_menu4')">-
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu4', 'decrease')">-
                                             </button>
                                             <span id="side_menu4_quantity">0</span>
-                                            <button class="quantity-button" onclick="increaseQuantity('side_menu4')">+
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu4', 'increase')">+
                                             </button>
                                         </div>
                                     </div>
@@ -435,10 +449,12 @@
                                     <h5>￦<span id="side_menu5_price">2,400</span></h5>
                                     <div class="product">
                                         <div class="quantity-control">
-                                            <button class="quantity-button" onclick="decreaseQuantity('side_menu5')">-
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu5', 'decrease')">-
                                             </button>
                                             <span id="side_menu5_quantity">0</span>
-                                            <button class="quantity-button" onclick="increaseQuantity('side_menu5')">+
+                                            <button class="quantity-button"
+                                                    onclick="updateMenuItemQuantity('side_menu5', 'increase')">+
                                             </button>
                                         </div>
                                     </div>
@@ -463,11 +479,13 @@
                                 <h5>￦<span id="drink_menu1_price">2,300</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu1')">-
-                                        </button>
-                                        <span id="drink_menu1_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu1')">+
-                                        </button>
+                                    <button class="quantity-button"
+                                            onclick="updateMenuItemQuantity('drink_menu1', 'decrease')">-
+                                    </button>
+                                    <span id="drink_menu1_quantity">0</span>
+                                    <button class="quantity-button"
+                                            onclick="updateMenuItemQuantity('drink_menu1', 'increase')">+
+                                    </button>
                                     </div>
                                 </div>
                             </div>
@@ -480,10 +498,12 @@
                                 <h5>￦<span id="drink_menu2_price">2,300</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu2')">-
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu2', 'decrease')">-
                                         </button>
                                         <span id="drink_menu2_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu2')">+
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu2', 'increase')">+
                                         </button>
                                     </div>
                                 </div>
@@ -497,10 +517,12 @@
                                 <h5>￦<span id="drink_menu3_price">2,400</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu3')">-
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu3', 'decrease')">-
                                         </button>
                                         <span id="drink_menu3_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu3')">+
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu3', 'increase')">+
                                         </button>
                                     </div>
                                 </div>
@@ -515,10 +537,12 @@
                                 <h5>￦<span id="drink_menu4_price">1,700</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu4')">-
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu4', 'decrease')">-
                                         </button>
                                         <span id="drink_menu4_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu4')">+
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu4', 'increase')">+
                                         </button>
                                     </div>
                                 </div>
@@ -532,10 +556,12 @@
                                 <h5>￦<span id="drink_menu5_price">1,700</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu5')">-
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu5', 'decrease')">-
                                         </button>
                                         <span id="drink_menu5_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu5')">+
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu5', 'increase')">+
                                         </button>
                                     </div>
                                 </div>
@@ -549,10 +575,12 @@
                                 <h5>￦<span id="drink_menu6_price">1,700</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                        <button class="quantity-button" onclick="decreaseQuantity('drink_menu6')">-
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu6', 'decrease')">-
                                         </button>
                                         <span id="drink_menu6_quantity">0</span>
-                                        <button class="quantity-button" onclick="increaseQuantity('drink_menu6')">+
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu6', 'increase')">+
                                         </button>
                                     </div>
                                 </div>
@@ -566,7 +594,8 @@
 </section>
 
 <div style="text-align: center;" class="gray_bg">
-<button class="btn_quick_order" id="popup_open_btn" style="align-self : cen;">주문</button>
+    <button class="btn_quick_order" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
+
 </div>
 
 <div id="my_modal" style="display: none;">
@@ -601,10 +630,12 @@
             </div>
         </div>
     </div>
-	<div style="display: flex; justify-content: space-between;">
-    <a class="modal_order_btn" style="text-align: left;">주문하기</a>
+    <div style="display: flex; justify-content: space-between;">
+<%--        <a class="modal_order_btn" style="text-align: left;" onclick="placeOrder()">주문하기</a>--%>
+    <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="placeOrder()">주문하기</a>
+
     <a class="modal_close_btn" style="text-align: right;">닫기</a>
-</div>
+    </div>
 </div>
 
 
