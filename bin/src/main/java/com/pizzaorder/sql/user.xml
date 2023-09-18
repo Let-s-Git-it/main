@@ -7,9 +7,11 @@
         INSERT INTO CUSTOMER VALUES
         (#{userid},#{userpw},#{username},#{userphone},#{zipcode},#{addr},#{addretc},#{addrdetail})
     </insert>
+
     <select id="logincheck" parameterType="hashmap" resultType="_int">
         SELECT count(*) FROM CUSTOMER WHERE userid= #{userid} AND userpw = #{userpw}
     </select>
+
     <select id="checkId" parameterType="string" resultType="_int">
         select count(*) from customer where userid = #{userid}
     </select>
