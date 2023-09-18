@@ -121,32 +121,9 @@ function openModal (id) {
   });
 }
 
-// 원격 서버로 주문 정보를 전송하는 함수
-function sendOrderToServer (orderData) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', '/order', true);
-  xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+// db order 테이블로 전송해주기 위한 함수
+function submitOrder () {
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        // 주문 성공 시 알림 표시
-        alert('주문이 완료되었습니다.');
-
-        // 주문 내용 초기화
-        resetOrderConfirmation();
-
-        // 모달 닫기
-        closeModal();
-      } else {
-        // 주문 실패 시 에러 처리 (선택 사항)
-        alert('주문을 처리하는 중에 오류가 발생했습니다.');
-      }
-    }
-  };
-
-  // 주문 정보 전송
-  xhr.send(JSON.stringify(orderData));
 }
 
 Element.prototype.setStyle = function (styles) {

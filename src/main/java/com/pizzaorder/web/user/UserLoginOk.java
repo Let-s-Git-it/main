@@ -56,7 +56,7 @@ public class UserLoginOk implements Action {
         HttpSession session = req.getSession();
 
         if (udao.UserLoginOk(userid, userpw)) {
-            // If user_name and user_num are valid
+
             String welcomeMessage = userid + "님, 환영합니다.";
             try {
                 resp.setContentType("text/html; charset=UTF-8");
