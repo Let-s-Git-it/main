@@ -72,8 +72,8 @@
                         </ul>
                     </div>
                     <c:choose>
-                        <c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                            <div class="menu_btn" id="loginBtn">
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="signupBtn">
                                 <a href="${pageContext.request.contextPath}/join/joinview.jsp"
                                    class="btn_1 d-none d-sm-block">회원가입</a>
                             </div>
@@ -81,21 +81,35 @@
                         <c:otherwise>
                             <div class="menu_btn" id="logoutBtn">
                                 <a href="${pageContext.request.contextPath}/user/Logoutok.us"
-                                   class="btn_1 d-none d-sm-block">로그아웃</a>
+                                   class="btn_1 d-none d-sm-block" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a>
                             </div>
                             <div class="menu_btn" id="kakao_logoutBtn">
                                 <a href="#" onclick="logoutFromKakao()" class="btn_1 d-none d-sm-block">sns 로그아웃</a>
                             </div>
                         </c:otherwise>
                     </c:choose>
+
                     <c:choose>
-                        <c:when test="$${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                            <div class="menu_btn" id="signupBtn" test="${session.user }">
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="loginBtn"
+                                 test="${empty sessionScope.userid && empty param.kakaoUserId }">
                                 <a href="${pageContext.request.contextPath}/login/loginview.jsp"
                                    class="btn_1 d-none d-sm-block">로그인</a>
                             </div>
-                            <div class="menu_btn" id="orderBtn" test="${session.user }">
-                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+
+                        </c:otherwise>
+                    </c:choose>
+
+                    <c:choose>
+                        <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
                                    class="btn_1 d-none d-sm-block">주문하기</a>
                             </div>
                         </c:when>
@@ -104,12 +118,9 @@
                                 <a href="${pageContext.request.contextPath}/menu/review.jsp"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
-                            <div class="menu_btn" id="orderBtn">
-                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
-                                   class="btn_1 d-none d-sm-block">주문하기</a>
-                            </div>
                         </c:otherwise>
                     </c:choose>
+
                 </nav>
             </div>
         </div>
@@ -482,13 +493,13 @@
                                 <h5>￦<span id="drink_menu1_price">2,300</span></h5>
                                 <div class="product">
                                     <div class="quantity-control">
-                                    <button class="quantity-button"
-                                            onclick="updateMenuItemQuantity('drink_menu1', 'decrease')">-
-                                    </button>
-                                    <span id="drink_menu1_quantity">0</span>
-                                    <button class="quantity-button"
-                                            onclick="updateMenuItemQuantity('drink_menu1', 'increase')">+
-                                    </button>
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu1', 'decrease')">-
+                                        </button>
+                                        <span id="drink_menu1_quantity">0</span>
+                                        <button class="quantity-button"
+                                                onclick="updateMenuItemQuantity('drink_menu1', 'increase')">+
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -634,10 +645,15 @@
         </div>
     </div>
     <div style="display: flex; justify-content: space-between;">
+<<<<<<< HEAD
 <%--        <a class="modal_order_btn" style="text-align: left;" onclick="placeOrder()">주문하기</a>--%>
     <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="sendOrderToServer()">주문하기</a>
+=======
+        <%--        <a class="modal_order_btn" style="text-align: left;" onclick="placeOrder()">주문하기</a>--%>
+        <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="sendOrderToServer()">주문하기</a>
+>>>>>>> branch 'main' of https://github.com/Let-s-Git-it/main.git
 
-    <a class="modal_close_btn" style="text-align: right;">닫기</a>
+        <a class="modal_close_btn" style="text-align: right;">닫기</a>
     </div>
 </div>
 
@@ -666,9 +682,18 @@
 <!-- order js -->
 <script src="${pageContext.request.contextPath}/js/order.js"></script>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
+<<<<<<< HEAD
             integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
             crossorigin="anonymous"></script>
          <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
          <script src="${pageContext.request.contextPath}/login/kakao.js"></script>
+=======
+        integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
+        crossorigin="anonymous"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="${pageContext.request.contextPath}/login/kakao.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"></script>
+>>>>>>> branch 'main' of https://github.com/Let-s-Git-it/main.git
 </body>
 </html>

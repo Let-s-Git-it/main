@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+	<insert id="insertBoard" parameterType="userdto">
+	INSERT INTO REVIEW_BOARD tb values(board_seq.NEXTVAL,#{reviewtitle},#{reviewcontent}
+	,#{username},sysdate)
+	</insert>
+	
+	<select id="getBoardList" resultType = "userdto">
+		SELECT * FROM (
+			SELECT rownum r, A.* FROM (
+				SELECT * FROM REVIEW_BOARD ORDER BY REVIEWNUM DESC) A) B
+		WHERE B.r BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="getBoardCnt" resultType = "_int">
+		SELECT COUNT(*) FROM REVIEW_BOARD
+	</select>	
+
+</mapper>
+
+
+
+
+
+
+

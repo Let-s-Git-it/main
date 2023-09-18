@@ -27,13 +27,14 @@ public class UserDAO {
         }
     }
 
-    public boolean logincheck(String userid, String userpw) {
+    public boolean UserLoginOk(String userid, String userpw) {
         try (SqlSession sqlSession = factory.openSession()) {
             Map<String, String> paramMap = new HashMap<>();
             paramMap.put("userid", userid);
             paramMap.put("userpw", userpw);
 
             int count = sqlSession.selectOne("User.logincheck", paramMap);
+
             return count == 1;
         } catch (Exception e) {
             e.printStackTrace();
