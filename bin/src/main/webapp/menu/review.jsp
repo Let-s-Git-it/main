@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!doctype html>
 <html lang="en">
@@ -94,7 +94,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
@@ -102,35 +102,50 @@
                         </ul>
                     </div>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="loginBtn" >
-                        		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                    		</div>
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="logoutBtn">
-                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    		</div>
-                   	 	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="signupBtn">
+                                <a href="${pageContext.request.contextPath}/join/joinview.jsp"
+                                   class="btn_1 d-none d-sm-block">회원가입</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="logoutBtn">
+                                <a href="${pageContext.request.contextPath}/user/Logoutok.us"
+                                   class="btn_1 d-none d-sm-block" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
+
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="signupBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
-                           		class="btn_1 d-none d-sm-block">로그인</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>	
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="orderCheckbtn">
-                        		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn">
-                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>
-                    	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="loginBtn"
+                                 test="${empty sessionScope.userid && empty param.kakaoUserId }">
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                   class="btn_1 d-none d-sm-block">로그인</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+
+                        </c:otherwise>
+                    </c:choose>
+
+                    <c:choose>
+                        <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderCheckbtn">
+                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                   class="btn_1 d-none d-sm-block">주문내역</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
                 </nav>
             </div>
@@ -158,13 +173,75 @@
 <section class="blog_area single-post-area section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 posts-list">
                 <div class="single-post">
-                    <div class="feature-img">
-                        <img class="img-fluid" src="${pageContext.request.contextPath}/img/blog/single_blog_1.png"
-                             alt="">
-                    </div>
                     <div class="blog_details">
+<<<<<<< HEAD
+                    <c:set var="boardList" value="${requestScope.boardList}"/>
+					<c:set var="totalCnt" value="${requestScope.totalCnt}"/>
+                    <table style="width: 100%; border: 10px;">
+		<tr align="center" valign="middle">
+			<td><h3>MVC게시판</h3></td>
+		</tr>
+	</table>
+	<table border="1" style="border-collapse: collapse; border-spacing: 0;
+	width: 100%;">
+		<tr align="center" valign="middle">
+			<th width="8%">번호</th>
+			<th width="50%">제목</th>
+			<th width="15%">작성자</th>
+			<th width="27%">날짜</th>
+		</tr>
+		<c:choose>
+			<c:when test="${boardList != null && fn:length(boardList)>0}">
+				<c:forEach var="board" items="${boardList}">	
+					<tr align="center" valign="middle"
+						onmouseover="this.style.background='#bbdefb'"
+						onmouseout="this.style.background=''" height="23px">
+						<td>${board.reviewnum}</td>
+						<td>${board.reviewtitle}</td>
+						<td>${board.username}</td>
+						<td>${board.reviewdate}</td>
+					</tr>
+				</c:forEach>
+			</c:when>
+			<c:otherwise>
+				<tr style="height: 50px;">
+					<td colspan="5" style="text-align: center">등록된 게시물이 없습니다.</td>
+				</tr>
+			</c:otherwise>
+		</c:choose>
+	</table>
+	
+	<%-- 페이지 만들기 --%>
+	<table style="border: 0px; width: 100%;">
+		<tr align="center" valign="middle">
+			<td>
+				<c:choose>
+					<c:when test="${nowPage != startPage}">
+						<a href="${pageContext.request.contextPath}?page=${nowPage-1}">[<]</a>
+					</c:when>
+				</c:choose>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:choose>
+						<c:when test="${ i == nowPage }">
+							[${i}]
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}?page=${i}">
+							[${i}]
+							</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${nowPage != endPage}">
+						<a href="${pageContext.request.contextPath}?page=${nowPage+1}">[>]</a>
+					</c:when>
+				</c:choose>
+			</td>
+		</tr>
+	</table>
+=======
                         <h2>Second divided from form fish beast made every of seas
                             all gathered us saying he our
                         </h2>
@@ -278,9 +355,9 @@
                         <img src="${pageContext.request.contextPath}/img/blog/author.png" alt="">
                         <div class="media-body">
                             <h4>
-                            <a href="#">
-                                Harvard milan
-                            </a></h4>
+                                <a href="#">
+                                    Harvard milan
+                                </a></h4>
                             <p>Second divided from form fish beast made. Every of seas all gathered use saying you're,
                                 he
                                 our dominion twon Second divided from</p>
@@ -369,125 +446,30 @@
                                 </div>
                             </div>
                         </div>
+>>>>>>> branch 'main' of https://github.com/Let-s-Git-it/main.git
                     </div>
                 </div>
                 <div class="comment-form">
-                    <h4>Leave a Reply</h4>
-                    <form class="form-contact comment_form" action="#" id="commentForm">
+                    <h4>메뉴 리뷰창</h4>
+                    <form class="form-contact comment_form" action="${pageContext.request.contextPath}/user/BoardWrite.us" id="commentForm">
                         <div class="row">
+                        <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="title" id="title" type="text"
+                                           placeholder="제목">
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                        placeholder="Write Comment"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="email" id="email" type="email"
-                                           placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input class="form-control" name="website" id="website" type="text"
-                                           placeholder="Website">
+                                        placeholder="내용을 입력해 주세요"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="button button-contactForm">Send Message</button>
+                            <button type="submit" class="button button-contactForm">등록</button>
                         </div>
                     </form>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Category</h4>
-                        <ul class="list cat-list">
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Resaurant food</p>
-                                    <p>(37)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Travel news</p>
-                                    <p>(10)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Modern technology</p>
-                                    <p>(03)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Product</p>
-                                    <p>(11)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Inspiration</p>
-                                    <p>(21)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Health Care</p>
-                                    <p>(21)</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
-                    <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_1.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>From life was you fish...</h3>
-                                </a>
-                                <p>January 12, 2019</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_2.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>The Amazing Hubble</h3>
-                                </a>
-                                <p>02 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_3.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>Astronomy Or Astrology</h3>
-                                </a>
-                                <p>03 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_4.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>Asteroids telescope</h3>
-                                </a>
-                                <p>01 Hours ago</p>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
             </div>
         </div>
     </div>

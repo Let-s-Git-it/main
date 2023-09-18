@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!doctype html>
 <html lang="en">
@@ -65,7 +65,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
@@ -73,35 +73,50 @@
                         </ul>
                     </div>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="loginBtn" >
-                        		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                    		</div>
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="logoutBtn">
-                        		<a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block">로그아웃</a>
-                    		</div>
-                   	 	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="signupBtn">
+                                <a href="${pageContext.request.contextPath}/join/joinview.jsp"
+                                   class="btn_1 d-none d-sm-block">회원가입</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="logoutBtn">
+                                <a href="${pageContext.request.contextPath}/user/Logoutok.us"
+                                   class="btn_1 d-none d-sm-block" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
+
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="signupBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
-                           		class="btn_1 d-none d-sm-block">로그인</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>	
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="orderCheckbtn">
-                        		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn">
-                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>
-                    	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="loginBtn"
+                                 test="${empty sessionScope.userid && empty param.kakaoUserId }">
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                   class="btn_1 d-none d-sm-block">로그인</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+
+                        </c:otherwise>
+                    </c:choose>
+
+                    <c:choose>
+                        <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderCheckbtn">
+                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                   class="btn_1 d-none d-sm-block">주문내역</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
                 </nav>
             </div>
@@ -239,7 +254,6 @@
     </div>
 </section>
 <!--::chefs_part end::-->
-
 
 
 <!-- footer part start-->
