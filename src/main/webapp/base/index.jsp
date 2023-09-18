@@ -159,42 +159,6 @@
 </section>
 <!-- banner part start-->
 
-<%--user 환영문구 한 번만 뜨게 설정--%>
-<%
-    String userId = (String) session.getAttribute("userid");
-    if (userId != null) {
-        out.println("<script>");
-        out.println("var welcomeMessage = \"" + userId + " 님 환영합니다!\";");
-        out.println("alert(welcomeMessage);");
-        out.println("sessionStorage.setItem(\"welcomeShown\", \"true\");");
-        out.println("</script>");
-        session.removeAttribute("userid"); // 한 번만 띄우고 삭제
-    }
-%>
-<%
-    String kakaoUserId = request.getParameter("kakaoUserName");
-    if (kakaoUserId != null) {
-        String kakaouserId = (String) session.getAttribute("kakaoUserName");
-        if (kakaouserId != null) {
-            out.println("<script>");
-            out.println("var welcomeMessage = \"" + kakaouserId + " 님 환영합니다!\";");
-            out.println("alert(welcomeMessage);");
-            out.println("sessionStorage.setItem(\"welcomeShown\", \"true\");");
-            out.println("</script>");
-            session.removeAttribute("kakaoUserName"); // 한 번만 띄우고 삭제
-        }
-
-        session.setAttribute("kakaoUserName", kakaoUserId);
-    }
-
-    String savedKakaoUserId = (String) session.getAttribute("kakaoUserName");
-    if (savedKakaoUserId != null) {
-        out.println("<script>");
-        out.println("sessionStorage.setItem(\"kakaoUserIdShown\", \"true\");");
-        out.println("</script>");
-        session.removeAttribute("kakaoUserName"); // 한 번만 띄우고 삭제
-    }
-%>
 <!-- jquery plugins here-->
 <!-- jquery -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>
