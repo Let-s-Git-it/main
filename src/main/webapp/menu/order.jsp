@@ -604,7 +604,7 @@
 </section>
 
 <div style="text-align: center;" class="gray_bg">
-    <button class="btn_quick_order" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
+    <button class="button button-contactForm" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
 
 </div>
 
