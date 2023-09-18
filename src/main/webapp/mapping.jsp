@@ -83,13 +83,8 @@
                         <c:otherwise>
                             <div class="menu_btn" id="logoutBtn">
                                 <a href="${pageContext.request.contextPath}/user/Logoutok.us"
-                                   class="btn_1 d-none d-sm-block" onclick="confirmLogout()">로그아웃</a>
+                                   class="btn_1 d-none d-sm-block" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a>
                             </div>
-                            <script>
-                              function confirmLogout () {
-                                var confirmLogout = confirm("로그아웃 하시겠습니까?");
-                              }
-                            </script>
                         </c:otherwise>
                     </c:choose>
 
