@@ -40,18 +40,6 @@ public class UserDAO {
             return false;
         }
     }
-    public String namecheck(String userid, String userpw) {
-        String username = null;
-        try {
-            Map<String, String> idMap = new HashMap<>();
-            // MyBatis를 사용하여 SQL 쿼리 실행
-           username = sqlSession.selectOne("User.idcheck", idMap);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return username;
-
-    }
 
     public boolean checkId(String userid) {
         try (SqlSession sqlSession = factory.openSession()) {
