@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 <!doctype html>
@@ -73,40 +73,55 @@
                         </ul>
                     </div>
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="loginBtn" >
-                        		<a href="${pageContext.request.contextPath}/join/joinview.jsp" class="btn_1 d-none d-sm-block">회원가입</a>
-                    		</div>
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="logoutBtn">
-                              <a href="${pageContext.request.contextPath}/user/Logoutok.us" class="btn_1 d-none d-sm-block" onclick = "confirmLogout()">로그아웃</a>
-                          </div>
-                          <script>
-                          function confirmLogout() {
-                               var confirmLogout = confirm("로그아웃 하시겠습니까?");
-                          }
-                          </script>
-                   	 	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="signupBtn">
+                                <a href="${pageContext.request.contextPath}/join/joinview.jsp"
+                                   class="btn_1 d-none d-sm-block">회원가입</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="logoutBtn">
+                                <a href="${pageContext.request.contextPath}/user/Logoutok.us"
+                                   class="btn_1 d-none d-sm-block" onclick="confirmLogout()">로그아웃</a>
+                            </div>
+                            <script>
+                              function confirmLogout () {
+                                var confirmLogout = confirm("로그아웃 하시겠습니까?");
+                              }
+                            </script>
+                        </c:otherwise>
                     </c:choose>
+
                     <c:choose>
-                    	<c:when test="${empty sessionScope.userid} ||${empty sessionScope.kakaoid }">
-                    		<div class="menu_btn" id="signupBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp"
-                           		class="btn_1 d-none d-sm-block">로그인</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn" test="${session.user }">
-                        		<a href="${pageContext.request.contextPath}/login/loginview.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>	
-                    	</c:when>
-                    	<c:otherwise>
-                    		<div class="menu_btn" id="orderCheckbtn">
-                        		<a href="${pageContext.request.contextPath}/menu/review.jsp" class="btn_1 d-none d-sm-block">주문내역</a>
-                    		</div>
-                    		<div class="menu_btn" id="orderBtn">
-                        		<a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_1 d-none d-sm-block">주문하기</a>
-                    		</div>
-                    	</c:otherwise>
+                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                            <div class="menu_btn" id="loginBtn"
+                                 test="${empty sessionScope.userid && empty param.kakaoUserId }">
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                   class="btn_1 d-none d-sm-block">로그인</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+
+                        </c:otherwise>
+                    </c:choose>
+
+                    <c:choose>
+                        <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
+                            <div class="menu_btn" id="orderBtn">
+                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                   class="btn_1 d-none d-sm-block">주문하기</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="menu_btn" id="orderCheckbtn">
+                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                   class="btn_1 d-none d-sm-block">주문내역</a>
+                            </div>
+                        </c:otherwise>
                     </c:choose>
                 </nav>
             </div>
@@ -143,12 +158,43 @@
     </div>
 </section>
 <!-- banner part start-->
-<script>
-    <c:if test="${not empty sessionScope.userid }">
-        var welcomeMessage = "${sessionScope.userid} 님 환영합니다!";
-        alert(welcomeMessage);
-    </c:if>
-</script>
+
+<%--user 환영문구 한 번만 뜨게 설정--%>
+<%
+    String userId = (String) session.getAttribute("userid");
+    if (userId != null) {
+        out.println("<script>");
+        out.println("var welcomeMessage = \"" + userId + " 님 환영합니다!\";");
+        out.println("alert(welcomeMessage);");
+        out.println("sessionStorage.setItem(\"welcomeShown\", \"true\");");
+        out.println("</script>");
+        session.removeAttribute("userid"); // 한 번만 띄우고 삭제
+    }
+%>
+<%
+    String kakaoUserId = request.getParameter("kakaoUserName");
+    if (kakaoUserId != null) {
+        String kakaouserId = (String) session.getAttribute("kakaoUserName");
+        if (kakaouserId != null) {
+            out.println("<script>");
+            out.println("var welcomeMessage = \"" + kakaouserId + " 님 환영합니다!\";");
+            out.println("alert(welcomeMessage);");
+            out.println("sessionStorage.setItem(\"welcomeShown\", \"true\");");
+            out.println("</script>");
+            session.removeAttribute("kakaoUserName"); // 한 번만 띄우고 삭제
+        }
+
+        session.setAttribute("kakaoUserName", kakaoUserId);
+    }
+
+    String savedKakaoUserId = (String) session.getAttribute("kakaoUserName");
+    if (savedKakaoUserId != null) {
+        out.println("<script>");
+        out.println("sessionStorage.setItem(\"kakaoUserIdShown\", \"true\");");
+        out.println("</script>");
+        session.removeAttribute("kakaoUserName"); // 한 번만 띄우고 삭제
+    }
+%>
 <!-- jquery plugins here-->
 <!-- jquery -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.1.min.js"></script>
