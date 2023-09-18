@@ -66,7 +66,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>

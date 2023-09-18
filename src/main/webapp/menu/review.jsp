@@ -94,7 +94,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
@@ -158,336 +158,96 @@
 <section class="blog_area single-post-area section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 posts-list">
                 <div class="single-post">
-                    <div class="feature-img">
-                        <img class="img-fluid" src="${pageContext.request.contextPath}/img/blog/single_blog_1.png"
-                             alt="">
-                    </div>
                     <div class="blog_details">
-                        <h2>Second divided from form fish beast made every of seas
-                            all gathered us saying he our
-                        </h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                        <p class="excert">
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower
-                        </p>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually
-                        </p>
-                        <div class="quote-wrapper">
-                            <div class="quotes">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you
-                                should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at
-                                a fraction of the camp price. However, who has the willpower to actually sit through a
-                                self-imposed MCSE training.
-                            </div>
-                        </div>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower
-                        </p>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually
-                        </p>
-                    </div>
-                </div>
-                <div class="navigation-top">
-                    <div class="d-sm-flex justify-content-between text-center">
-                        <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span> Lily and 4
-                            people like this</p>
-                        <div class="col-sm-4 text-center my-2 my-sm-0">
-                            <!-- <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> 06 Comments</p> -->
-                        </div>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="navigation-area">
-                        <div class="row">
-                            <div
-                                    class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img class="img-fluid"
-                                             src="${pageContext.request.contextPath}/img/post/preview.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#">
-                                        <span class="lnr text-white ti-arrow-left"></span>
-                                    </a>
-                                </div>
-                                <div class="detials">
-                                    <p>Prev Post</p>
-                                    <a href="#">
-                                        <h4>Space The Final Frontier</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                                <div class="detials">
-                                    <p>Next Post</p>
-                                    <a href="#">
-                                        <h4>Telescopes 101</h4>
-                                    </a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#">
-                                        <span class="lnr text-white ti-arrow-right"></span>
-                                    </a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img class="img-fluid"
-                                             src="${pageContext.request.contextPath}/img/post/next.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-author">
-                    <div class="media align-items-center">
-                        <img src="${pageContext.request.contextPath}/img/blog/author.png" alt="">
-                        <div class="media-body">
-                            <h4>
-                            <a href="#">
-                                Harvard milan
-                            </a></h4>
-                            <p>Second divided from form fish beast made. Every of seas all gathered use saying you're,
-                                he
-                                our dominion twon Second divided from</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="comments-area">
-                    <h4>05 Comments</h4>
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="${pageContext.request.contextPath}/img/comment/comment_1.png" alt="">
-                                </div>
-                                <div class="desc">
-                                    <p class="comment">
-                                        Multiply sea night grass fourth day sea lesser rule open subdue female fill
-                                        which them
-                                        Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                    </p>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <h5>
-                                                <a href="#">Emilly Blunt</a>
-                                            </h5>
-                                            <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        </div>
-                                        <div class="reply-btn">
-                                            <a href="#" class="btn-reply text-uppercase">reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="${pageContext.request.contextPath}/img/comment/comment_2.png" alt="">
-                                </div>
-                                <div class="desc">
-                                    <p class="comment">
-                                        Multiply sea night grass fourth day sea lesser rule open subdue female fill
-                                        which them
-                                        Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                    </p>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <h5>
-                                                <a href="#">Emilly Blunt</a>
-                                            </h5>
-                                            <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        </div>
-                                        <div class="reply-btn">
-                                            <a href="#" class="btn-reply text-uppercase">reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="${pageContext.request.contextPath}/img/comment/comment_3.png" alt="">
-                                </div>
-                                <div class="desc">
-                                    <p class="comment">
-                                        Multiply sea night grass fourth day sea lesser rule open subdue female fill
-                                        which them
-                                        Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                    </p>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <h5>
-                                                <a href="#">Emilly Blunt</a>
-                                            </h5>
-                                            <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        </div>
-                                        <div class="reply-btn">
-                                            <a href="#" class="btn-reply text-uppercase">reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <c:set var="boardList" value="${requestScope.boardList}"/>
+					<c:set var="totalCnt" value="${requestScope.totalCnt}"/>
+                    <table style="width: 100%; border: 10px;">
+		<tr align="center" valign="middle">
+			<td><h3>MVC게시판</h3></td>
+		</tr>
+	</table>
+	<table border="1" style="border-collapse: collapse; border-spacing: 0;
+	width: 100%;">
+		<tr align="center" valign="middle">
+			<th width="8%">번호</th>
+			<th width="50%">제목</th>
+			<th width="15%">작성자</th>
+			<th width="27%">날짜</th>
+		</tr>
+		<c:choose>
+			<c:when test="${boardList != null && fn:length(boardList)>0}">
+				<c:forEach var="board" items="${boardList}">	
+					<tr align="center" valign="middle"
+						onmouseover="this.style.background='#bbdefb'"
+						onmouseout="this.style.background=''" height="23px">
+						<td>${board.reviewnum}</td>
+						<td>${board.reviewtitle}</td>
+						<td>${board.username}</td>
+						<td>${board.reviewdate}</td>
+					</tr>
+				</c:forEach>
+			</c:when>
+			<c:otherwise>
+				<tr style="height: 50px;">
+					<td colspan="5" style="text-align: center">등록된 게시물이 없습니다.</td>
+				</tr>
+			</c:otherwise>
+		</c:choose>
+	</table>
+	
+	<%-- 페이지 만들기 --%>
+	<table style="border: 0px; width: 100%;">
+		<tr align="center" valign="middle">
+			<td>
+				<c:choose>
+					<c:when test="${nowPage != startPage}">
+						<a href="${pageContext.request.contextPath}?page=${nowPage-1}">[<]</a>
+					</c:when>
+				</c:choose>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:choose>
+						<c:when test="${ i == nowPage }">
+							[${i}]
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}?page=${i}">
+							[${i}]
+							</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${nowPage != endPage}">
+						<a href="${pageContext.request.contextPath}?page=${nowPage+1}">[>]</a>
+					</c:when>
+				</c:choose>
+			</td>
+		</tr>
+	</table>
                     </div>
                 </div>
                 <div class="comment-form">
-                    <h4>Leave a Reply</h4>
-                    <form class="form-contact comment_form" action="#" id="commentForm">
+                    <h4>메뉴 리뷰창</h4>
+                    <form class="form-contact comment_form" action="${pageContext.request.contextPath}/user/BoardWrite.us" id="commentForm">
                         <div class="row">
+                        <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="title" id="title" type="text"
+                                           placeholder="제목">
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                        placeholder="Write Comment"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="email" id="email" type="email"
-                                           placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input class="form-control" name="website" id="website" type="text"
-                                           placeholder="Website">
+                                        placeholder="내용을 입력해 주세요"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="button button-contactForm">Send Message</button>
+                            <button type="submit" class="button button-contactForm">등록</button>
                         </div>
                     </form>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Category</h4>
-                        <ul class="list cat-list">
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Resaurant food</p>
-                                    <p>(37)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Travel news</p>
-                                    <p>(10)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Modern technology</p>
-                                    <p>(03)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Product</p>
-                                    <p>(11)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Inspiration</p>
-                                    <p>(21)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Health Care</p>
-                                    <p>(21)</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
-                    <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_1.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>From life was you fish...</h3>
-                                </a>
-                                <p>January 12, 2019</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_2.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>The Amazing Hubble</h3>
-                                </a>
-                                <p>02 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_3.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>Astronomy Or Astrology</h3>
-                                </a>
-                                <p>03 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="${pageContext.request.contextPath}/img/post/post_4.png" alt="post">
-                            <div class="media-body">
-                                <a href="review.jsp">
-                                    <h3>Asteroids telescope</h3>
-                                </a>
-                                <p>01 Hours ago</p>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
             </div>
         </div>
     </div>

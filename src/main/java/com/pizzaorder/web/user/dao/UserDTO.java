@@ -9,6 +9,44 @@ public class UserDTO {
 	private String addr;
 	private String addretc;
 	private String addrdetail;
+	private int reviewnum;
+	private String reviewtitle;
+	private String reviewcontent;
+	private String reviewdate;
+	
+
+	
+	public int getReviewnum() {
+		return reviewnum;
+	}
+
+	public void setReviewnum(int reviewnum) {
+		this.reviewnum = reviewnum;
+	}
+
+	public String getReviewtitle() {
+		return reviewtitle;
+	}
+
+	public void setReviewtitle(String reviewtitle) {
+		this.reviewtitle = reviewtitle;
+	}
+
+	public String getReviewcontent() {
+		return reviewcontent;
+	}
+
+	public void setReviewcontent(String reviewcontent) {
+		this.reviewcontent = reviewcontent;
+	}
+
+	public String getReviewdate() {
+		return reviewdate;
+	}
+
+	public void setReviewdate(String reviewdate) {
+		this.reviewdate = reviewdate;
+	}
 
 	public String getUserid() {
 		return userid;

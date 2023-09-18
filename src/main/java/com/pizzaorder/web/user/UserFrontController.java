@@ -56,6 +56,29 @@ protected void doProcess(HttpServletRequest request,
 		forward = new Logoutok().execute(request, response);
 	}
 
+	
+	switch(requestURI) {
+	case "/user/BoardWrite.us":
+		forward = new ActionForward(true, "/menu/review.jsp");
+		break;
+		// /board/BoardWriteOK.bo
+		// insert, BoardWriteOkAction
+		// DAO : insertBoard()
+	case "/user/BoardWriteOK.us":
+		forward = new BoardWriteOkAction().execute(request, response);
+		break;
+		// 글 목록보기
+		// /board/BoardList.bo
+		// /board/BoardList.jsp로 이동
+	case "/menu/review.us":
+		forward = new BoardListAction().execute(request, response);
+		break;
+//		forward = new ActionForward(true, "/board/boardList.jsp");
+		//글 목록, 글 조회 올리기
+		//BoardListAction().execute();
+		// dao : 조회, getBoardList()
+		// xml : 쿼리, getBoardList
+}
 	//일괄처리
 	if(forward != null) {
 		if(forward.isRedirect()) {
@@ -68,5 +91,6 @@ protected void doProcess(HttpServletRequest request,
 			disp.forward(request, response);
 		}
 	}
+
  }
 }

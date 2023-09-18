@@ -1,6 +1,7 @@
 package com.pizzaorder.web.user.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -59,4 +60,33 @@ public class UserDAO {
             return false;
         }
     }
+    
+    public boolean insertBoard( UserDTO board ) {
+		boolean result = false;
+		
+		if(sqlSession.insert("Board.insertBoard",board) != 0) {
+			//성공시
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	public List<UserDTO> getBoardList(int startRow, int endRow) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		
+		
+		List<UserDTO> list = sqlSession.selectList("Board.getBoardList", datas);
+				
+		System.out.println(  list.get(0).getReviewnum());
+				
+		return list;	
+	}
+
+	public int getBoardCnt() {
+		
+		return sqlSession.selectOne("Board.getBoardCnt");
+	}
 }

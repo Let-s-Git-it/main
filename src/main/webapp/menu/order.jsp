@@ -53,21 +53,21 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">홈</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
+                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">메뉴</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">소개</a>
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
                             </li>
                         </ul>
                     </div>
@@ -82,6 +82,9 @@
                             <div class="menu_btn" id="logoutBtn">
                                 <a href="${pageContext.request.contextPath}/user/Logoutok.us"
                                    class="btn_1 d-none d-sm-block">로그아웃</a>
+                            </div>
+                            <div class="menu_btn" id="kakao_logoutBtn">
+                                <a href="#" onclick="logoutFromKakao()" class="btn_1 d-none d-sm-block">sns 로그아웃</a>
                             </div>
                         </c:otherwise>
                     </c:choose>
@@ -594,7 +597,7 @@
 </section>
 
 <div style="text-align: center;" class="gray_bg">
-    <button class="btn_quick_order" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
+    <button class="button button-contactForm" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
 
 </div>
 
@@ -632,7 +635,7 @@
     </div>
     <div style="display: flex; justify-content: space-between;">
 <%--        <a class="modal_order_btn" style="text-align: left;" onclick="placeOrder()">주문하기</a>--%>
-    <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="placeOrder()">주문하기</a>
+    <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="sendOrderToServer()">주문하기</a>
 
     <a class="modal_close_btn" style="text-align: right;">닫기</a>
     </div>
@@ -662,6 +665,10 @@
 <script src="${pageContext.request.contextPath}/js/custom.js"></script>
 <!-- order js -->
 <script src="${pageContext.request.contextPath}/js/order.js"></script>
-
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
+            integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
+            crossorigin="anonymous"></script>
+         <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+         <script src="${pageContext.request.contextPath}/login/kakao.js"></script>
 </body>
 </html>

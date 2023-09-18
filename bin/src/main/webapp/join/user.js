@@ -28,16 +28,6 @@ function sendit () {
     return false;
   }
 
-  if (pwTag.value.length < 8) {
-    alert('8자 이상 기입해주세요');
-    return false;
-  }
-
-  if (pwTag.value != pwCheckTag.value) {
-    alert('비밀번호가 일치하지 않습니다.');
-    return false;
-  }
-
   if (nameTag.value == '') {
     alert('이름을 입력해주세요');
     return false;
@@ -56,48 +46,15 @@ function sendit () {
   frm.submit();
 }
 
-function logincheck (userid, userpw) {
+//비밀번호 중복 체크
+function checkPw (userpw, userpw_re) {
+  var pwdResult = document.getElementById('pwdResult');
 
-  let frm = document.userlogin;
-  let idTag2 = frm.userid;
-  let pwTag2 = frm.userpw;
-
-  if (idTag2.value == '') {
-    alert('아이디를 입력해주세요!');
-    idTag2.focus();
-    return false;
+  if (userpw !== userpw_re) {
+    pwdResult.innerHTML = '비밀번호가 일치하지 않습니다..';
   } else {
-    let xhr = new XMLHttpRequest(); //요청
-    xhr.open('GET', 'idcheck.jsp?userid=' + userid, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-      // 응답의 영역(성공상태)
-      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
-        if (xhr.responseText.trim() == 'not-ok') {
-          alert('아이디를 다시 입력해주세요');
-        }
-      }
-    };
+    pwdResult.innerHTML = '';
   }
-
-  if (pwTag2.value == '') {
-    alert('비밀번호를 입력해주세요!');
-    pwTag2.focus();
-    return false;
-  } else {
-    let xhr = new XMLHttpRequest(); //요청
-    xhr.open('GET', 'pwcheck.jsp?userpw=' + userpw, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-      // 응답의 영역(성공상태)
-      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
-        if (xhr.responseText.trim() == 'not-ok') {
-          alert('비밀번호를 확인해주세요');
-        }
-      }
-    };
-  }
-  frm.submit();
 }
 
 // 아이디 중복체크
@@ -107,17 +64,15 @@ function checkId (userid) {
     alert('아이디를 입력해주세요');
     return false;
   } else {
-    // ajax 통신
-    let xhr = new XMLHttpRequest(); //요청
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', 'idcheck.jsp?userid=' + userid, true);
     xhr.send();
     xhr.onreadystatechange = function () {
-      // 응답의 영역(성공상태)
       if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
         if (xhr.responseText.trim() == 'ok') {
-          alert('사용할 수 있는 아이디입니다.');
+          document.getElementById('isResult').innerHTML = '사용 가능한 아이디입니다.';
         } else {
-          alert('이미 존재하는 아이디입니다.');
+          document.getElementById('isResult').innerHTML = '이미 사용중인 아이디입니다.';
         }
       }
     };
