@@ -22,11 +22,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/pizzaorder/sql/user.xml" />
-<<<<<<< HEAD
 		<mapper resource="com/pizzaorder/sql/board.xml" />
-=======
 		<mapper resource="com/pizzaorder/sql/menu.xml"/>
-
->>>>>>> branch 'main' of https://github.com/Let-s-Git-it/main.git
 	</mappers>
 </configuration>
