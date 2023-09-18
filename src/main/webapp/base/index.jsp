@@ -65,7 +65,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
@@ -107,7 +107,7 @@
                     <c:choose>
                         <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
                             <div class="menu_btn" id="orderBtn">
-                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
                                    class="btn_1 d-none d-sm-block">주문하기</a>
                             </div>
                         </c:when>
@@ -138,10 +138,20 @@
                             게살 피자 ㅂ풔풔풔풔풔풮풮 피자 맛있는 피자 게살 피자 둥궁딱 둥궁둥궁둥국딱 피자<br>
                             둥궁둥궁둥궁딱 피자 맛있는 ㅇ예예옝예예 피자~~ 게살~~ 피자~~~♪</p>
                         <div class="banner_btn">
-                            <div class="banner_btn_iner">
-                                <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img
-                                        src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
-                            </div>
+                            <c:choose>
+                                <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
+                                    <div class="banner_btn_iner">
+                                        <a href="${pageContext.request.contextPath}/login/loginview.jsp"
+                                           class="btn_2">주문하기 <img
+                                                src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
+                                    </div>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="${pageContext.request.contextPath}/menu/order.jsp" class="btn_2">주문하기 <img
+                                            src="${pageContext.request.contextPath}/img/icon/left_1.svg" alt=""></a>
+                                </c:otherwise>
+                            </c:choose>
+
                             <a href="https://www.youtube.com/watch?v=EvPMHHjYzj0" class="popup-youtube video_popup">
                                 <span><img src="${pageContext.request.contextPath}/img/icon/play.svg" alt=""></span>
                                 Watch our identity</a>
@@ -150,6 +160,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 <!-- banner part start-->

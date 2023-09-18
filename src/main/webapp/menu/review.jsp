@@ -136,7 +136,7 @@
                     <c:choose>
                         <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
                             <div class="menu_btn" id="orderBtn">
-                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
                                    class="btn_1 d-none d-sm-block">주문하기</a>
                             </div>
                         </c:when>
