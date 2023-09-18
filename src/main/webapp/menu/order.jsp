@@ -106,7 +106,7 @@
                     <c:choose>
                         <c:when test="${empty sessionScope.userid &&empty param.kakaoUserId}">
                             <div class="menu_btn" id="orderBtn">
-                                <a href="${pageContext.request.contextPath}/menu/order.jsp"
+                                <a href="${pageContext.request.contextPath}/login/loginview.jsp"
                                    class="btn_1 d-none d-sm-block">주문하기</a>
                             </div>
                         </c:when>
@@ -117,7 +117,6 @@
                             </div>
                         </c:otherwise>
                     </c:choose>
-
                 </nav>
             </div>
         </div>
@@ -673,7 +672,6 @@
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
         integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
         crossorigin="anonymous"></script>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="${pageContext.request.contextPath}/login/kakao.js"></script>
 </body>
