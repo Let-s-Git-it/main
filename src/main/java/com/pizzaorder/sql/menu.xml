@@ -6,6 +6,9 @@
     <insert id="addmenu" parameterType="menudto">
         INSERT INTO orders (CustomerID, username, addr, userphone, MenuItemID, MenuName, Quantity, Price, OrderTime)
         VALUES (#{category_id}, #{menu_name}, #{menu_size}, #{menu_count}, #{menu_price}, NOW())
-
     </insert>
+
+    <select id="getOrders" resultType="menudto">
+        SELECT * FROM orders  where userid = #{userid} ORDER BY ordertime DESC;
+    </select>
 </mapper>
