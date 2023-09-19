@@ -53,21 +53,21 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">Home</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/index.jsp">홈</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">Menu</a>
+                                   href="${pageContext.request.contextPath}/menu/food_menu.jsp">메뉴</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">Chefs</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/base/chefs.jsp">소개</a>
                             </li>
                             <li class="nav-item">
                                 <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                                   href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">Contact</a>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/mapping.jsp">오시는 길</a>
                             </li>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@
                         </c:when>
                         <c:otherwise>
                             <div class="menu_btn" id="orderCheckbtn">
-                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                <a href="#"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
                         </c:otherwise>
@@ -604,13 +604,12 @@
 </section>
 
 <div style="text-align: center;" class="gray_bg">
-    <button class="btn_quick_order" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
+    <button class="button button-contactForm" id="popup_open_btn" onclick="openModal('my_modal')">주문</button>
 
 </div>
 
-<div id="my_modal" style="display: none;">
-
     <!-- 주문 확인 창 start -->
+<div id="my_modal" style="display: none;">
     <div class="container"
          style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; height: 400px; overflow-y: auto;">
         <div id="updateOrderConfirmation" style="width: 250px; height: 100%;">
@@ -636,14 +635,12 @@
             <hr/>
             총 가격
             <div id="total_price_confirmation" align="right">
-                총 가격: ￦<span id="total_price">0</span>
+               <span id="total_price">0</span>
             </div>
         </div>
     </div>
     <div style="display: flex; justify-content: space-between;">
-        <%--        <a class="modal_order_btn" style="text-align: left;" onclick="placeOrder()">주문하기</a>--%>
-        <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="submitOrder()">주문하기</a>
-
+        <a class="modal_order_btn" style="text-align: left; cursor: pointer;" onclick="sendOrderToServer()">주문하기</a>
         <a class="modal_close_btn" style="text-align: right;">닫기</a>
     </div>
 </div>
@@ -672,7 +669,6 @@
 <script src="${pageContext.request.contextPath}/js/custom.js"></script>
 <!-- order js -->
 <script src="${pageContext.request.contextPath}/js/order.js"></script>
-<%--kakao apia, js--%>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
         integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
         crossorigin="anonymous"></script>

@@ -189,7 +189,7 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png"
                                                 class="mr-3" alt="...">
@@ -213,7 +213,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/seafood.png"
                                                 class="mr-3" alt="...">
@@ -227,7 +227,7 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png"
                                                 class="mr-3" alt="...">
@@ -239,7 +239,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/potato.png"
                                                 class="mr-3" alt="...">
@@ -251,7 +251,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/steak.png"
                                                 class="mr-3" alt="...">
@@ -270,7 +270,7 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png"
                                                 class="mr-3" alt="...">
@@ -282,7 +282,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png"
                                                 class="mr-3" alt="...">
@@ -294,7 +294,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/carbonara.png"
                                                 class="mr-3" alt="...">
@@ -308,7 +308,7 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/bolognese.png"
                                                 class="mr-3" alt="...">
@@ -320,7 +320,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png"
                                                 class="mr-3" alt="...">
@@ -339,7 +339,7 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/coke.png"
                                                 class="mr-3" alt="...">
@@ -350,7 +350,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png"
                                                 class="mr-3" alt="...">
@@ -361,7 +361,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/sprite.png"
                                                 class="mr-3" alt="...">
@@ -374,7 +374,7 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/coke_500.png"
                                                 class="mr-3" alt="...">
@@ -385,7 +385,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/zerocoke_500.png"
                                                 class="mr-3" alt="...">
@@ -396,7 +396,7 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
                                         <img
                                                 src="${pageContext.request.contextPath}/img/food_menu/sprite_500.png"
                                                 class="mr-3" alt="...">

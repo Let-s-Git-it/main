@@ -4,23 +4,28 @@ function updatePrice (menuId, size) {
   var price = priceElement.innerText;
 
   // 해당 메뉴 사이즈 선택
+
   var sizeElement = document.querySelector('input[name="' + menuId + '"]:checked');
   var selectedSize = sizeElement ? sizeElement.getAttribute('data-size') : null;
 
   // 사이즈 선택 여부 판단 이후 업데이트 실행 여부 판단
+
   if (selectedSize === null) {
     alert('사이즈를 선택해 주세요.');
   } else {
     document.getElementById(menuId + '_price').innerText = price;
   }
 
+
   // 주문 확인 창 업데이트
   updateOrderConfirmation();
 }
 
+
 function updateMenuItemQuantity (menuId, operation) {
   var quantityElement = document.getElementById(menuId + '_quantity');
   var currentQuantity = parseInt(quantityElement.textContent);
+
 
   if (operation === 'increase') {
     quantityElement.textContent = currentQuantity + 1;
@@ -28,8 +33,11 @@ function updateMenuItemQuantity (menuId, operation) {
     quantityElement.textContent = currentQuantity - 1;
   }
 
+
   updateOrderConfirmation();
 }
+
+
 
 function updateOrderConfirmation () {
   var total = 0;
@@ -44,6 +52,7 @@ function updateOrderConfirmation () {
       var menuId = category + i;
       var quantityElement = document.getElementById(menuId + '_quantity');
       var quantity = parseInt(quantityElement.innerText);
+
 
       if (quantity > 0) {
         var menuName = document.getElementById(menuId + '_name').innerText;
@@ -66,6 +75,8 @@ function updateOrderConfirmation () {
   updateTotalPrice(total);
 }
 
+
+
 function resetOrderConfirmation () {
   var menuCategories = ['main_menu', 'side_menu', 'drink_menu'];
 
@@ -79,10 +90,14 @@ function resetOrderConfirmation () {
   updateTotalPrice(0);
 }
 
+
+
 function updateTotalPrice (total) {
   var totalPriceElement = document.getElementById('total_price');
   totalPriceElement.innerText = '￦' + total.toLocaleString();
 }
+
+
 
 function openModal (id) {
   var zIndex = 9999;
@@ -121,10 +136,36 @@ function openModal (id) {
   });
 }
 
-// db order 테이블로 전송해주기 위한 함수
-function submitOrder () {
 
+
+// 원격 서버로 주문 정보를 전송하는 함수
+function sendOrderToServer (orderData) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/order', true);
+  xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        // 주문 성공 시 알림 표시
+        alert('주문이 완료되었습니다.');
+
+        // 주문 내용 초기화
+        resetOrderConfirmation();
+
+        // 모달 닫기
+        closeModal();
+      } else {
+        // 주문 실패 시 에러 처리 (선택 사항)
+        alert('주문을 처리하는 중에 오류가 발생했습니다.');
+      }
+    }
+  };
+
+  // 주문 정보 전송
+  xhr.send(JSON.stringify(orderData));
 }
+
 
 Element.prototype.setStyle = function (styles) {
   for (var style in styles) {
@@ -133,11 +174,13 @@ Element.prototype.setStyle = function (styles) {
   return this;
 };
 
+
 window.addEventListener('load', updateOrderConfirmation);
 
 document.getElementById('popup_open_btn').addEventListener('click', function () {
   openModal('my_modal');
 });
+
 
 // 모달 창 닫기
 function closeModal () {

@@ -79,6 +79,7 @@
                                    class="btn_1 d-none d-sm-block">회원가입</a>
                             </div>
                         </c:when>
+
                         <c:otherwise>
                             <div class="menu_btn" id="logoutBtn">
                                 <a href="${pageContext.request.contextPath}/user/Logoutok.us"
@@ -100,7 +101,6 @@
                                 <a href="${pageContext.request.contextPath}/menu/order.jsp"
                                    class="btn_1 d-none d-sm-block">주문하기</a>
                             </div>
-
                         </c:otherwise>
                     </c:choose>
 
