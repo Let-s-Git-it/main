@@ -14,38 +14,6 @@ import java.io.PrintWriter;
 
 
 public class UserLoginOk implements Action {
-    /*  @Override
-      public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-
-          ActionForward forward = new ActionForward();
-          UserDAO udao = new UserDAO();
-          String userid = request.getParameter("userid");
-          String userpw = request.getParameter("userpw");
-          HttpSession session = request.getSession();
-
-          // 사용자 로그인 확인
-          if (udao.UserLoginOk(userid, userpw)) {
-
-              String welcomemsg = userid + "님 환영합니다.";
-              try {
-                  session.setAttribute("userid", userid);
-                  // 로그인 성공 시 홈 페이지로 이동
-                  forward.setPath("/base/index.jsp");
-                  PrintWriter out = response.getWriter();
-                  out.println("<script>alert('" + welcomemsg + "');window.location.href='/base/index.jsp';</script>");
-              } catch (IOException e) {
-                  throw new RuntimeException(e);
-              }
-
-
-          } else {
-              // 로그인 실패 시 에러 메시지 설정
-              request.setAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
-              forward.setPath("/login/loginview.jsp");
-          }
-  //        System.out.println("forward >>>>>>>>>>>>>>>>>>>>>>>>> " + forward.toString());
-          return forward;
-      }*/
     @Override
     public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 
