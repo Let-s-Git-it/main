@@ -608,7 +608,7 @@
 
 </div>
 
-    <!-- 주문 확인 창 start -->
+<!-- 주문 확인 창 start -->
 <div id="my_modal" style="display: none;">
     <div class="container"
          style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; height: 400px; overflow-y: auto;">
@@ -635,7 +635,7 @@
             <hr/>
             총 가격
             <div id="total_price_confirmation" align="right">
-               <span id="total_price">0</span>
+                <span id="total_price">0</span>
             </div>
         </div>
     </div>
