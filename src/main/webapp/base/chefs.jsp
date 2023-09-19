@@ -113,7 +113,7 @@
                         </c:when>
                         <c:otherwise>
                             <div class="menu_btn" id="orderCheckbtn">
-                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                <a href="${pageContext.request.contextPath}/menu/ordercheck.jsp"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
                         </c:otherwise>
@@ -173,7 +173,7 @@
                     <div class="single_blog_text text-center">
                         <h3>김영환</h3>
                         <p>BackEnd</p>
-                        <p>회원가입, 로그인, 로그아웃, 지도 API</p>
+                        <p>로그아웃, 지도 API</p>
 
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                     <div class="single_blog_text text-center">
                         <h3>노건우</h3>
                         <p>BackEnd</p>
-                        <p>회원가입, 로그인, 로그아웃</p>
+                        <p>로그아웃, PPT 제작, 제약조건 검증</p>
                     </div>
                 </div>
             </div>
@@ -197,8 +197,8 @@
                     </div>
                     <div class="single_blog_text text-center">
                         <h3>김용진</h3>
-                        <p>FrontEnd</p>
-                        <p>장바구니, 리뷰페이지, 메뉴페이지, DB설계</p>
+                        <p>FullStack(FrontEnd,BackEnd)</p>
+                        <p>장바구니/리뷰페이지 구현, 주문 및 장바구니 구현 메뉴페이지, DB설계</p>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                     <div class="single_blog_text text-center">
                         <h3>우지연</h3>
                         <p>FullStack(FrontEnd,BackEnd)</p>
-                        <p>DB설계, 로그인/회원가입 기능 구현, SNS 로그인, 회원가입/로그인페이지 구현</p>
+                        <p>DB설계, 로그인/회원가입 기능 구현, SNS 로그인 기능, 회원가입/로그인페이지 구현</p>
                     </div>
                 </div>
             </div>

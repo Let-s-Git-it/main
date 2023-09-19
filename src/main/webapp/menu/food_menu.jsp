@@ -126,7 +126,7 @@
                         </c:when>
                         <c:otherwise>
                             <div class="menu_btn" id="orderCheckbtn">
-                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                <a href="${pageContext.request.contextPath}/menu/ordercheck.jsp"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
                         </c:otherwise>
@@ -179,7 +179,7 @@
                                            aria-selected="false">음료<img
                         src="${pageContext.request.contextPath}/img/icon/play.svg"
                         alt="play"></a> <a
-                        href="${pageContext.request.contextPath}/menu/review.jsp">리뷰</a>
+                        href="${pageContext.request.contextPath}/menu/review.us">리뷰</a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -189,11 +189,19 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/bulgogi.png"
+                                                     class="mr-3" alt="..."></a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>불고기</h3>
                                         <p>프리미엄 불고기 토핑이 듬뿍</p>
@@ -201,11 +209,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/menu/order.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/quatro.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/quatro.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/quatro.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>콰트로</h3>
                                         <p>4가지 피자를 한 판에</p>
@@ -213,11 +230,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/seafood.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/seafood.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/seafood.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>씨푸드</h3>
                                         <p>바다와 육지의 대왕이 하나로</p>
@@ -227,11 +253,21 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/pepperoni.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                     <div class="media-body align-self-center">
                                         <h3>페퍼로니</h3>
                                         <p>짭짤한 풍미의 페퍼로니, 파마산+로마노 치즈가 토핑</p>
@@ -239,11 +275,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/potato.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/potato.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/potato.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>포테이토</h3>
                                         <p>신선한 감자와 고소한 치즈의 환상 조합</p>
@@ -251,11 +296,21 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/steak.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/steak.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/steak.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                     <div class="media-body align-self-center">
                                         <h3>스테이크</h3>
                                         <p>카우보이들이 즐겨 먹던 정통 그릴드 비프 스테이크의 재현</p>
@@ -270,11 +325,21 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/cheese_ball.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                     <div class="media-body align-self-center">
                                         <h3>치즈볼</h3>
                                         <p>맥앤치즈 필링에 자꾸만 손이 가는 매력적인 맛</p>
@@ -282,11 +347,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/hot_wing.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>핫 윙</h3>
                                         <p>웨스턴 스타일로 매콤하게</p>
@@ -294,11 +368,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/carbonara.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/carbonara.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/carbonara.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>까르보나라</h3>
                                         <p>짭짤한 베이컨과 풍미 있는 까르보나라 소스가 어우러진</p>
@@ -308,11 +391,20 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/bolognese.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/bolognese.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/bolognese.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>볼로네제 파스타</h3>
                                         <p>정통 이탈리안 볼로네즈 소스 베이스에 달달한 페타 크림 치즈를 덮어 풍미를 높이다</p>
@@ -320,11 +412,20 @@
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coleslaw.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>코울슬로</h3>
                                         <p>아삭한 양배추와 각종 야채를 소스와 버무려 새콤달콤한 맛이 가득</p>
@@ -339,33 +440,60 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/coke.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coke.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coke.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>콜라</h3>
                                         <h5>1.25L ￦2,300</h5>
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>제로 콜라</h3>
                                         <h5>1.25L ￦2,300</h5>
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/sprite.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/sprite.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/sprite.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>스프라이트</h3>
                                         <h5>1.5L ￦2,400</h5>
@@ -374,33 +502,60 @@
                             </div>
                             <div class="col-sm-6 col-lg-6">
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/coke_500.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coke_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/coke_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>콜라</h3>
                                         <h5>500ml ￦1,700</h5>
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/zerocoke_500.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/zerocoke_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>제로 콜라</h3>
                                         <h5>500ml ￦1,700</h5>
                                     </div>
                                 </div>
                                 <div class="single_food_item media">
-                                    <a href="${pageContext.request.contextPath}/login/loginview.jsp">
-                                        <img
-                                                src="${pageContext.request.contextPath}/img/food_menu/sprite_500.png"
-                                                class="mr-3" alt="...">
-                                    </a>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userid && empty param.kakaoUserId}">
+                                            <a href="${pageContext.request.contextPath}/login/loginview.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/sprite_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="${pageContext.request.contextPath}/menu/order.jsp">
+                                                <img src="${pageContext.request.contextPath}/img/food_menu/sprite_500.png"
+                                                     class="mr-3" alt="...">
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
                                     <div class="media-body align-self-center">
                                         <h3>스프라이트</h3>
                                         <h5>500ml ￦1,700</h5>

@@ -142,7 +142,7 @@
                         </c:when>
                         <c:otherwise>
                             <div class="menu_btn" id="orderCheckbtn">
-                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                <a href="${pageContext.request.contextPath}/menu/ordercheck.jsp"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
                         </c:otherwise>
@@ -179,7 +179,7 @@
 					<c:set var="totalCnt" value="${requestScope.totalCnt}"/>
                     <table style="width: 100%; border: 10px;">
 		<tr align="center" valign="middle">
-			<td><h3>MVC게시판</h3></td>
+			<td><h3>네모바지 피자 리뷰</h3></td>
 		</tr>
 	</table>
 	<table border="1" style="border-collapse: collapse; border-spacing: 0;
@@ -243,7 +243,7 @@
                     </div>
                 </div>
                 <div class="comment-form">
-                    <h4>메뉴 리뷰창</h4>
+                    <h4>작성하세요</h4>
                     <form class="form-contact comment_form" action="${pageContext.request.contextPath}/user/BoardWrite.us" id="commentForm">
                         <div class="row">
                         <div class="col-12">

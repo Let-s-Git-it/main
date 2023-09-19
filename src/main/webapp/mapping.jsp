@@ -114,7 +114,7 @@
                         </c:when>
                         <c:otherwise>
                             <div class="menu_btn" id="orderCheckbtn">
-                                <a href="${pageContext.request.contextPath}/menu/review.jsp"
+                                <a href="${pageContext.request.contextPath}/menu/ordercheck.jsp"
                                    class="btn_1 d-none d-sm-block">주문내역</a>
                             </div>
                         </c:otherwise>
